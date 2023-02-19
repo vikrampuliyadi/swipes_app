@@ -1,0 +1,184 @@
+/* SignUp.css */
+
+.background {
+    background: #be2c2c;
+}
+
+.container {
+    width: 80%;
+    margin-left: 10%;
+    position: relative; /* Set position to relative */
+}
+
+.container h1 {
+    position: absolute;
+    width: 607px;
+    height: 116px;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 73px;
+    text-align: center;
+    
+    color: #1C7ED6;
+    
+    text-shadow: 5px 5px 14px rgba(0, 0, 0, 0.25);
+}
+
+.container p.firstName {
+    position: absolute;
+    width: 162px;
+    height: 43px;
+    left: 50%;
+    top: 125px;
+    transform: translateX(-50%);
+    
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #1C7ED6;
+}
+
+.container p.lastName {
+    position: absolute;
+    width: 162px;
+    height: 43px;
+    left: 50%;
+    top: 250px;
+    transform: translateX(-50%);
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #1C7ED6;
+}
+
+.container p.email {
+    position: absolute;
+    width: 162px;
+    height: 43px;
+    left: 50%;
+    top: 375px;
+    transform: translateX(-50%);
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #1C7ED6;
+}
+
+.container p.password {
+    position: absolute;
+    width: 162px;
+    height: 43px;
+    left: 50%;
+    top: 500px;
+    transform: translateX(-50%);
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #1C7ED6;
+
+}
+
+.container input.textBox1 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.container input.textBox2 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 325px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+}
+
+.container input.textBox3 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 450px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.container input.textBox4 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 575px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.container .button {
+    position: absolute;
+    color: #F1EDED;
+    font-size: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    width: 298px;
+    height: 82px;
+    left: 50%;
+    top: 675px;
+    
+    transform: translateX(-50%);
+
+    background: #1A2C45;
+    border-radius: 40px;
+
+
+}

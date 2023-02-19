@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
 import hamIcon from './hamburger-icon.png';
+import './App.css';
 
 function MyForm() {
   const [diningHall, setDiningHall] = useState('');

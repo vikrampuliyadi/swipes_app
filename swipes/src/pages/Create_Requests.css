@@ -1,11 +1,11 @@
-body {
-    background-color: #109BFF;
-  }
-  
   form {
     width: 50%;
     margin: 0 auto;
     margin-top: 30px;
+  }
+
+  body {
+    background-color: #109BFF;
   }
   
   label {

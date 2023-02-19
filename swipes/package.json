@@ -12,8 +12,11 @@
     "react-dom": "^18.2.0",
 <<<<<<< HEAD
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
+=======
 =======
     "react-scripts": "^5.0.1",
+>>>>>>> main
 >>>>>>> main
     "src": "^1.1.2",
     "web-vitals": "^2.1.4"

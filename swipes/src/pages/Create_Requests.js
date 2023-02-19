@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
-=======
-import React from 'react';
->>>>>>> main
-import './App.css';
 import hamIcon from './hamburger-icon.png';
+import './App.css';
 
 function MyForm() {
   const [diningHall, setDiningHall] = useState('');
@@ -34,7 +30,6 @@ function MyForm() {
   };
 
   return (
-<<<<<<< HEAD
     <form id="myForm" onSubmit={handleSubmit}>
       <label htmlFor="diningHall">Dining Hall:</label>
       <input
@@ -92,17 +87,6 @@ function MyForm() {
 
     <div className='btn'>
     <input type="submit" value="Post" />
-=======
-    <div className="App">
-      <header className="App-header">
-        <h1>SwipeX</h1>
-        <h2>Welcome to SwipeX, where you can buy and sell meal swipes for the UCLA dining halls!</h2>
-        <div className="App-buttons">
-          <button className="App-signup-button">Sign Up</button>
-          <button className="App-login-button">Log In</button>
-        </div>
-      </header>
->>>>>>> main
     </div>
 
     <button className="hamburger-menu-button" onClick={handleMenuClick}>

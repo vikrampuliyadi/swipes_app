@@ -1,0 +1,83 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #109bff;
+}
+
+.post-container {
+  color: white;
+  font-weight: bold;
+  background-color: #5e5c5c;
+  border-color: black;
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr 2fr;
+  border-radius: 25px;
+  width: 65%;
+  align-self: center;
+  margin: auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  padding: 3%;
+  overflow: hidden;
+}
+
+.post-element {
+  background-color: #5e5c5c;
+  justify-self: stretch;
+  margin: auto;
+  text-align: left;
+  margin-left: 0;
+}
+
+.post-author {
+  background-color: #aba5e5;
+  font-size: 18px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  width: 100%;
+}
+
+.post-timestamp {
+  font-size: 8px;
+}
+
+.post-content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  align-self: center;
+
+  /* margin-bottom: 9.6rem; */
+}
+
+.logo {
+  background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_6522516&psig=AOvVaw3dcKO0j1F-u5MAknJqhmVW&ust=1676848006235000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDr4OaXoP0CFQAAAAAdAAAAABAD);
+}
+
+.hamburger-menu-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hamburger-icon {
+  height: 2rem;
+  width: 2rem;
+}

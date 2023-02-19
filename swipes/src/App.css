@@ -1,38 +1,104 @@
-.App {
+body {
+  background-color: #109BFF;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background: #D9D9D9;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  background: #1A2C45;
+  border-radius: 40px;
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+}
+
+.btn {
+  margin:auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="submit"]:hover {
+  background-color: #ebba34;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hamburger-menu-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden; 
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hamburger-icon {
+  height: 40px;
+  width: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.hamburger-menu{
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  border: none;
+  padding: 10px;
+  text-align: right;
+  font-size: 16px;
+  border-radius: 50px;
+  list-style: none;
+}
+.ham-list-item {
+  top: 55px;
+  right: 20px;
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden; 
+  text-align: center;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.space-between-menu-items {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }

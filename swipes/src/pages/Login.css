@@ -1,0 +1,109 @@
+.container {
+    width: 80%;
+    margin-left: 10%;
+    position: relative; /* Set position to relative */
+}
+
+.container p.loginEmail {
+    position: absolute;
+    width: 162px;
+    height: 43px;
+    left: 50%;
+    top: 125px;
+    transform: translateX(-50%);
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #1C7ED6;
+}
+
+.container p.loginPassword {
+    position: absolute;
+    width: 162px;
+    height: 43px;
+    left: 50%;
+    top: 250px;
+    transform: translateX(-50%);
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #1C7ED6;
+
+}
+
+.container input.loginText1 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+}
+
+.container input.loginText1 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 200px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+}
+
+.container input.loginText2 {
+    position: absolute;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    top: 325px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    
+    background: #F1EDED;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+}
+
+.container .loginButton {
+    position: absolute;
+    color: #F1EDED;
+    font-size: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    width: 298px;
+    height: 82px;
+    left: 50%;
+    top: 425px;
+    
+    transform: translateX(-50%);
+
+    background: #1A2C45;
+    border-radius: 40px;
+
+}

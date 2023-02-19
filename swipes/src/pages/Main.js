@@ -1,25 +1,36 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import SocialMediaPost from "../Components/SocialMediaPost.js";
+import "./Main.css";
+import hamIcon from "../imgs/hamburger-icon.png";
 
-function App() {
+function Main() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button className="hamburger-menu-button">
+        <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
+      </button>
+      <SocialMediaPost
+        author="Edmond"
+        content="Bro someone lemme cop some swipes bro"
+        price={9}
+        diningHall="BPlate"
+        timestamp="February 18, 2023 12:34 PM"
+        paymentType="Zelle"
+        date="Monday 5-6PM"
+      />
+
+      <SocialMediaPost
+        logo
+        author="Ryan"
+        content="Swipe me in pls"
+        price={8}
+        diningHall="Feast"
+        timestamp="January 18, 2023 12:34 PM"
+        paymentType={"Venmo"}
+        date="Wednesday 11:30-12:30PM"
+      />
     </div>
   );
 }
 
-export default App;
+export default Main;

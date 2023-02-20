@@ -54,7 +54,6 @@ input[type="submit"] {
   text-align: center;
 }
 
-<<<<<<< HEAD
 input[type="submit"]:hover {
   background-color: #ebba34;
 }
@@ -103,7 +102,7 @@ input[type="submit"]:hover {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-=======
+
 .App-header {
   background-image: url('ucla-full-promo.jpg');
   background-repeat: no-repeat;
@@ -161,4 +160,4 @@ input[type="submit"]:hover {
 }
 
 
->>>>>>> main
+

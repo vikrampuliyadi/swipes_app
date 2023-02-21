@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import hamIcon from './hamburger-icon.png';
 import './App.css';
 
-function MyForm() {
+function Create_Requests() {
   const [diningHall, setDiningHall] = useState('');
   const [dateTime, setDateTime] = useState('');
   const [price, setPrice] = useState('');
@@ -96,4 +96,4 @@ function MyForm() {
   );
 }
 
-export default MyForm;
+export default Create_Requests;

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import hamIcon from '../img/hamburger-icon.png';
-import './Create_Requests.css';
+import React, { useState } from "react";
+import hamIcon from "../imgs/hamburger-icon.png";
+import "./Create_Requests.css";
 
 function Create_Requests() {
-  const [diningHall, setDiningHall] = useState('');
-  const [dateTime, setDateTime] = useState('');
-  const [price, setPrice] = useState('');
-  const [payment, setPayment] = useState('');
-  const [contact, setContact] = useState('');
-  const [message, setMessage] = useState('');
+  const [diningHall, setDiningHall] = useState("");
+  const [dateTime, setDateTime] = useState("");
+  const [price, setPrice] = useState("");
+  const [payment, setPayment] = useState("");
+  const [contact, setContact] = useState("");
+  const [message, setMessage] = useState("");
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -84,14 +84,13 @@ function Create_Requests() {
         onChange={(event) => setMessage(event.target.value)}
       />
 
+      <div className="btn">
+        <input type="submit" value="Post" />
+      </div>
 
-    <div className='btn'>
-    <input type="submit" value="Post" />
-    </div>
-
-    <button className="hamburger-menu-button" onClick={handleMenuClick}>
-            <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
-          </button>
+      <button className="hamburger-menu-button" onClick={handleMenuClick}>
+        <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
+      </button>
     </form>
   );
 }

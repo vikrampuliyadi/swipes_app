@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import hamIcon from './hamburger-icon.png';
-import './App.css';
+import hamIcon from '../img/hamburger-icon.png';
+import './Create_Requests.css';
 
 function Create_Requests() {
   const [diningHall, setDiningHall] = useState('');

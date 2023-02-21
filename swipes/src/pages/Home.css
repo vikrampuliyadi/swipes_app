@@ -3,7 +3,7 @@
   }
   
   .App-header {
-    background-image: url('ucla-full-promo.jpg');
+    background-image: url('../img/ucla-full-promo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;

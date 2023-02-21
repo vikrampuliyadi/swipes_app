@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Profile.css";
 import profilePic from '../default-profile-picture.png';
-import hamIcon from '../hamburger-icon.png';
+import hamIcon from '../imgs/hamburger-icon.png';
 
 function Star({ filled, onClick }) {
     return (

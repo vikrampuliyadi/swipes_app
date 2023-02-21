@@ -8,7 +8,7 @@ import Main from "./pages/Main.js";
 import SignUpPage from "./pages/SignUp.js";
 
 function App() {
-  return <div><Main/></div>;
+  return <div><Profile/></div>;
 }
 
 export default App;

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Profile from "./pages/Profile.js";
 import Create_Requests from "./pages/Create_Requests";

@@ -29,8 +29,8 @@ function Profile() {
   };
 
   return (
-    <div className="App" style={{ backgroundColor: "#109BFF" }}>
-      <header className="App-header">
+    <div className="profile" style={{ backgroundColor: "#109BFF" }}>
+      <header className="profile-header">
         <div>
           <button className="hamburger-menu-button" onClick={handleMenuClick}>
             <img src={hamIcon} alt="menu" className="hamburger-icon"></img>

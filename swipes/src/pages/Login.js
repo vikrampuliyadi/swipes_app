@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Login.css";
 import "./SignUp.css";
 
+import { Link } from "react-router-dom";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +18,10 @@ function Login() {
         <input className="loginText1" />
         <p className="loginPassword">Password</p>
         <input className="loginText2" />
-        <button className="loginButton">Login</button>
+        <Link to="/Main">
+          {" "}
+          <button className="loginButton">Login</button>
+        </Link>
       </body>
     </div>
   );

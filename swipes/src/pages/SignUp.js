@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 
 function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -43,7 +44,9 @@ function SignUpPage() {
         <input className="textBox3" />
         <p className="password">Password</p>
         <input className="textBox4" />
-        <button className="button">Create Account</button>
+        <Link to="/Main">
+          <button className="button">Create Account</button>{" "}
+        </Link>
       </body>
     </div>
   );

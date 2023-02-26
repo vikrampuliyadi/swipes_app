@@ -86,7 +86,9 @@ function Create_Requests() {
       />
 
       <div className="btn">
-        <input type="submit" value="Post" />
+        <Link to="/Main">
+          <input type="submit" value="Post" />
+        </Link>
       </div>
 
       <div>

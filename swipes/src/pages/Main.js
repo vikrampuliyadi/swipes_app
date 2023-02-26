@@ -13,13 +13,6 @@ function Main() {
 
   return (
     <div>
-      <Link to="/Profile">
-        {" "}
-        <button className="hamburger-menu-button">
-          <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
-        </button>
-      </Link>
-
       <div>
         <button className="hamburger-menu-button" onClick={handleMenuClick}>
           <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
@@ -37,7 +30,10 @@ function Main() {
                 </li>
                 <div className="space-between-menu-items"></div>
                 <li>
-                  <button className="ham-list-item">Post</button>
+                  <Link to="/Create_Requests">
+                    {" "}
+                    <button className="ham-list-item">Post</button>{" "}
+                  </Link>
                 </li>
               </ul>
             </nav>

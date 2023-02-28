@@ -38,6 +38,12 @@ function Main() {
                     <button className="dropdown ham-list-item">Profile</button>
                   </Link>
                 </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Home">
+                    <button className="dropdown ham-list-item">Sign Out</button>
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>

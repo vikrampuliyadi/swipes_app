@@ -11,16 +11,16 @@ function Login() {
   return (
     <div className="container">
       <header>
-        <h1>Login</h1>
+        <h1 className="head">Login</h1>
       </header>
-      <body>
-        <p className="loginEmail">Email</p>
-        <input className="loginText1" />
-        <p className="loginPassword">Password</p>
-        <input className="loginText2" />
+      <body className="form">
+        <p className="title container">Email</p>
+        <input className="loginText1 container" />
+        <p className="title container">Password</p>
+        <input className="loginText2 container" />
         <Link to="/Main">
           {" "}
-          <button className="loginButton">Login</button>
+          <button className="loginButton container">Login</button>
         </Link>
       </body>
     </div>

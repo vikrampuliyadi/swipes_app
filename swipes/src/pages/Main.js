@@ -23,19 +23,19 @@ function Main() {
               <ul className="hamburger-menu">
                 <li>
                   <Link to="/Main">
-                    <button className="ham-list-item">Feed</button>
+                    <button className="dropdown ham-list-item">Feed</button>
                   </Link>
                 </li>
                 <div className="space-between-menu-items"></div>
                 <li>
                   <Link to="/Create_Requests">
-                    <button className="ham-list-item">Post</button>
+                    <button className="dropdown ham-list-item">Post</button>
                   </Link>
                 </li>
                 <div className="space-between-menu-items"></div>
                 <li>
                   <Link to="/Profile">
-                    <button className="ham-list-item">Profile</button>
+                    <button className="dropdown ham-list-item">Profile</button>
                   </Link>
                 </li>
               </ul>
@@ -43,6 +43,7 @@ function Main() {
           </div>
         )}
       </div>
+      <div className="empty_space"></div>
       <SocialMediaPost
         author="Edmond"
         content="Bro someone lemme cop some swipes bro"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 
 function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -32,18 +33,20 @@ function SignUpPage() {
   return (
     <div className="container">
       <header>
-        <h1>Sign Up</h1>
+        <h1 className="head">Sign Up</h1>
       </header>
-      <body>
-        <p className="firstName">First Name</p>
+      <body className="form">
+        <p className="cont firstName">First Name</p>
         <input className="textBox1" />
-        <p className="lastName">Last Name</p>
+        <p className="cont lastName">Last Name</p>
         <input className="textBox2" />
-        <p className="email">Email</p>
+        <p className="cont email">Email</p>
         <input className="textBox3" />
-        <p className="password">Password</p>
+        <p className="cont password">Password</p>
         <input className="textBox4" />
-        <button className="button">Create Account</button>
+        <Link to="/Main">
+          <button className="button">Create Account</button>{" "}
+        </Link>
       </body>
     </div>
   );

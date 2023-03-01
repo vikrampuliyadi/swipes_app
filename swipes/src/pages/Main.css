@@ -1,23 +1,24 @@
 * {
   font-family: "Times New Roman", Times, serif;
-  background-color: #109bff;
+  /*background-color: #109bff; */
 }
-
+.empty_space {
+  height: 2rem;
+}
 .post-container {
   color: white;
   font-weight: bold;
   background-color: #5e5c5c;
   border-color: black;
-  font-size: 12px;
+  font-size: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr 2fr;
   border-radius: 25px;
-  width: 65%;
+  width: 75%;
   align-self: center;
   margin: auto;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   text-align: center;
   padding: 3%;
   overflow: hidden;
@@ -29,20 +30,18 @@
   margin: auto;
   text-align: left;
   margin-left: 0;
+  margin-bottom: 1.5rem;
+  margin-left: 1rem;
 }
 
 .post-author {
   background-color: #aba5e5;
-  font-size: 18px;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 1;
   width: 100%;
-}
-
-.post-timestamp {
-  font-size: 8px;
+  margin-left: 0rem;
 }
 
 .post-content {
@@ -78,6 +77,40 @@
 }
 
 .hamburger-icon {
-  height: 2rem;
-  width: 2rem;
+  height: 40px;
+  width: 40px;
 }
+
+.hamburger-menu {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  border: none;
+  padding: 10px;
+  text-align: right;
+  font-size: 16px;
+  border-radius: 50px;
+  list-style: none;
+}
+.ham-list-item {
+  top: 55px;
+  right: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  font-size: 16px;
+}
+
+.space-between-menu-items {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* .dropdown {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+} */

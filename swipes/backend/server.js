@@ -16,7 +16,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -28,15 +28,20 @@ mongoose.connect(uri, {useNewUrlParser: true})
     connection.once('open', () => {
       console.log("MongoDB database connection established successfully");
     })
-    //console.log("MongoDB database connection established successfully");
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB database:", error);
   });
 
-// connection.once('open', () => {
-//   console.log("MongoDB database connection established successfully");
-// })
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
+
+const usersRouter = require('./routes/users');
+const postsRouter = require('./routes/posts');
+
+app.use('./users', usersRouter);
+app.use('./posts', postsRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

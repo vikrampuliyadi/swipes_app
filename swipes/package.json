@@ -23,7 +23,8 @@
     "start": "react-scripts start",
     "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": [

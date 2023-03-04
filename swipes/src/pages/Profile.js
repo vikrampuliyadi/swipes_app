@@ -85,8 +85,13 @@ function Profile() {
         <p className="sc-head" style={{ color: "white" }}>
           UCLA Recommended Amount
         </p>
-        <p className="sc" style={{ color: "white" }}>
-          100
+        <p className="btncontainer" >
+          <input type="button" value="11R" />
+          <input type="button" value="11P" />
+          <input type="button" value="14R" />
+          <input type="button" value="14P" />
+          <input type="button" value="19R" />
+          <input type="button" value="19P" />
         </p>
         <p className="sc-head" style={{ color: "white" }}>
           Swipes Remaining

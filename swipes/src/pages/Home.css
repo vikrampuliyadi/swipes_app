@@ -25,7 +25,8 @@
   margin-right: 50px;
   margin-left: 50px;
   font-size: 2em;
-  color: #fcc419;
+  /* color: #fcc419; */
+  color: #d8d8d8;
 }
 
 .App-buttons {
@@ -40,8 +41,9 @@
   font-size: 1.2em;
   padding: 1em 2em;
   margin: 0 1em;
-  background-color: #65afd8;
-  color: #ffffff;
+  background-color: #dde0e2;
+  opacity: 80%;
+  color: #1d1d1d;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -55,5 +57,32 @@
 .App-signup-button:hover,
 .App-login-button:hover {
   background-color: #282c34;
-  color: #61dafb;
+  color: #ffffff;
+}
+
+.App {
+  background: linear-gradient(
+    -45deg,
+    #fcc419,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+  background-position: top;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -1,81 +1,126 @@
 .profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-  }
-  
-  .hamburger-menu-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden; 
-    text-align: center;
-  }
-  
-  .hamburger-icon {
-    height: 40px;
-    width: 40px;
-  }
-  
-  .hamburger-menu{
-    position: absolute;
-    top: 55px;
-    right: 20px;
-    border: none;
-    padding: 10px;
-    text-align: right;
-    font-size: 16px;
-    border-radius: 50px;
-    list-style: none;
-  }
-  .ham-list-item {
-    top: 55px;
-    right: 20px;
-    background-color: transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden; 
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  .space-between-menu-items {
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .profile-picture {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin: 20px 0;
-  }
-  
-  .padding {
-    padding-top: 25px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-  }
-  
-  .sc-head {
-    color: white;
-    font-size: 30px;
-    padding: 20px;
-    margin: 0px;
-  }
-  
-  .sc {
-    color: white;
-    font-size: 30px;
-    padding: 0px;
-    margin: 0px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.hamburger-menu-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hamburger-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  border: none;
+  padding: 10px;
+  text-align: right;
+  font-size: 16px;
+  border-radius: 50px;
+  list-style: none;
+}
+.ham-list-item {
+  top: 55px;
+  right: 20px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  font-size: 16px;
+}
+
+.space-between-menu-items {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+
+.padding {
+  padding-top: 25px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+.sc-head {
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+  margin: 0px;
+}
+
+.sc {
+  color: white;
+  font-size: 30px;
+  padding: 0px;
+  margin: 0px;
+}
+
+input[type="button"] {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  background: #000000;
+  border-radius: 40px;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+}
+
+.btncontainer {
+  text-align: center;
+  width: 100%;
+  /* grid-template-columns: (6,1fr);
+    justify-content: center; */
+}
+
+input[type="button"]:hover {
+  background-color: #ebba34;
+}
+
+.btn-to-ucladining {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  background: #000000;
+  border-radius: 40px;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+}

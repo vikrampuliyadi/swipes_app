@@ -97,7 +97,7 @@ function Profile() {
     const totalSwipesUsed = weekdaysElapsed * 1.6 + weekendsElapsed * 2;
 
     //Number of swipes left
-    const swipes = Math.floor(initialSwipes - totalSwipesUsed - 1);
+    const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);
 
     // alert(`Days elapsed: ${daysElapsed}`);
     alert(

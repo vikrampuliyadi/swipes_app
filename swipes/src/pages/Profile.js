@@ -92,10 +92,10 @@ function Profile() {
     const weekdaysElapsed = daysElapsed - (weekendsElapsed*2);
     console.log(weekdaysElapsed);
     //Total number of swipes used
-    const totalSwipesUsed = (weekdaysElapsed*1.6 + (weekendsElapsed*2));
+    const totalSwipesUsed = (weekdaysElapsed*2 + weekendsElapsed);
 
     //Number of swipes left
-    const swipes = Math.floor(initialSwipes - totalSwipesUsed - 1);
+    const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);
 
     // alert(`Days elapsed: ${daysElapsed}`);
     alert(`Today's date is ${month} ${day}, ${year}. At the beginning of today you should have ${swipes} swipes left for the quarter.`);

@@ -26,6 +26,7 @@ function SocialMediaPost({
       </div>
       <div className="post-element post-content">{content}</div>
       <div className="post-element post-contact">Contact: {contact}</div>
+      <button classname="accept-btn">Accept</button>
     </div>
   );
 }

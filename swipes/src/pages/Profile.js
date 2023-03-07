@@ -37,35 +37,37 @@ function Profile() {
             <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
           </button>
           {isMenuOpen && (
-              <div>
-                <nav>
-                  <ul className="hamburger-menu">
-                    <li>
-                      <Link to="/Main">
-                        <button className="ham-list-item">Feed</button>
-                      </Link>
-                    </li>
-                    <div className="space-between-menu-items"></div>
-                    <li>
-                      <Link to="/Create_Requests">
-                        <button className="ham-list-item">Post</button>
-                      </Link>
-                    </li>
-                    <div className="space-between-menu-items"></div>
-                    <li>
-                      <Link to="/Profile">
-                        <button className="ham-list-item">Profile</button>
-                      </Link>
-                    </li>
-                    <div className="space-between-menu-items"></div>
-                    <li>
-                      <Link to="/Home">
-                        <button className="dropdown ham-list-item">Sign Out</button>
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+            <div>
+              <nav>
+                <ul className="hamburger-menu">
+                  <li>
+                    <Link to="/Main">
+                      <button className="ham-list-item">Feed</button>
+                    </Link>
+                  </li>
+                  <div className="space-between-menu-items"></div>
+                  <li>
+                    <Link to="/Create_Requests">
+                      <button className="ham-list-item">Post</button>
+                    </Link>
+                  </li>
+                  <div className="space-between-menu-items"></div>
+                  <li>
+                    <Link to="/Profile">
+                      <button className="ham-list-item">Profile</button>
+                    </Link>
+                  </li>
+                  <div className="space-between-menu-items"></div>
+                  <li>
+                    <Link to="/Home">
+                      <button className="dropdown ham-list-item">
+                        Sign Out
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           )}
         </div>
         <div className="padding"></div>
@@ -88,12 +90,15 @@ function Profile() {
         <p className="sc" style={{ color: "white" }}>
           100
         </p>
-        <p className="sc-head" style={{ color: "white" }}>
-          Swipes Remaining
-        </p>
-        <p className="sc" style={{ color: "white" }}>
-          100
-        </p>
+        <form
+          action="https://myhousing.hhs.ucla.edu/shib/swipes"
+          method="get"
+          target="_blank"
+        >
+          <button className="btn-to-ucladining" type="submit">
+            Current Meal Swipe Balance
+          </button>
+        </form>
         <div className="padding"></div>
       </header>
     </div>

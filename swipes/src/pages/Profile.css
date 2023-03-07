@@ -80,19 +80,30 @@
   margin: 0px;
 }
 
-.btn-to-ucladining {
+input[type="button"] {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: 30px;
   line-height: 18px;
   text-align: center;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
-  background: #1a2c45;
+  background: #000000;
   border-radius: 40px;
   cursor: pointer;
   position: relative;
-  margin: auto;
+  margin: 1rem;
+}
+
+.btncontainer {
+  text-align: center;
+  width: 100%;
+  /* grid-template-columns: (6,1fr);
+    justify-content: center; */
+}
+
+input[type="button"]:hover {
+  background-color: #ebba34;
 }

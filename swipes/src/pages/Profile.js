@@ -3,30 +3,13 @@ import { Link } from "react-router-dom";
 import "./Profile.css";
 import profilePic from "../imgs/default-profile-picture.png";
 import hamIcon from "../imgs/hamburger-icon.png";
-
-function Star({ filled, onClick }) {
-  return (
-    <span
-      className="star"
-      onClick={onClick}
-      style={{ color: filled ? "gold" : "gray", fontSize: "75px" }}
-    >
-      &#9733;
-    </span>
-  );
-}
+import SocialMediaPost from "../Components/SocialMediaPost.js";
 
 function Profile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const [rating, setRating] = useState(0);
-
-  const handleStarClick = (index) => {
-    setRating(index + 1);
   };
 
   function calculateDaysElapsed(startDate, endDate) {
@@ -88,13 +71,11 @@ function Profile() {
       weekendsElapsed /= 2;
       weekendsElapsed = Math.floor(weekendsElapsed);
     }
-    console.log(weekendsElapsed);
 
     //Number of weekdays passed
     const weekdaysElapsed = daysElapsed - weekendsElapsed * 2;
-    console.log(weekdaysElapsed);
     //Total number of swipes used
-    const totalSwipesUsed = weekdaysElapsed * 1.6 + weekendsElapsed * 2;
+    const totalSwipesUsed = ((weekdaysElapsed * 2) + weekendsElapsed);
 
     //Number of swipes left
     const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);
@@ -260,15 +241,6 @@ function Profile() {
         <div>
           <img src={profilePic} className="profile-picture" alt="Profile" />
         </div>
-        <div>
-          {[...Array(5)].map((_, index) => (
-            <Star
-              key={index}
-              filled={index < rating}
-              onClick={() => handleStarClick(index)}
-            />
-          ))}
-        </div>
         <p className="sc-head" style={{ color: "white" }}>
           UCLA Recommended Amount
         </p>
@@ -291,6 +263,28 @@ function Profile() {
           </button>
         </form>
         <div className="padding"></div>
+        <div className="transactionHistory">
+          <p className="th-head">
+            Transaction History
+          </p>
+          <p className="thsub-head">
+            Bought
+          </p>
+          <div>
+          <SocialMediaPost
+            author="Edmond"
+            content="Bro someone lemme cop some swipes bro"
+            price={9}
+            diningHall="BPlate"
+            timestamp="February 18, 2023 12:34 PM"
+            paymentType="Zelle"
+            date="Monday 5-6PM"
+          />
+          </div>
+          <p className="thsub-head">
+            Sold
+          </p>
+      </div>
       </header>
     </div>
   );

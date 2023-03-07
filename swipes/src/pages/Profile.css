@@ -1,4 +1,5 @@
 .profile-header {
+  padding-top: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,4 +124,25 @@ input[type="button"]:hover {
   cursor: pointer;
   position: relative;
   margin: 1rem;
+}
+
+.th-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.thsub-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  padding-top: 2rem;
 }

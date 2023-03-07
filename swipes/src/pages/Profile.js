@@ -88,13 +88,11 @@ function Profile() {
       weekendsElapsed /= 2;
       weekendsElapsed = Math.floor(weekendsElapsed);
     }
-    console.log(weekendsElapsed);
 
     //Number of weekdays passed
     const weekdaysElapsed = daysElapsed - weekendsElapsed * 2;
-    console.log(weekdaysElapsed);
     //Total number of swipes used
-    const totalSwipesUsed = weekdaysElapsed * 1.6 + weekendsElapsed * 2;
+    const totalSwipesUsed = ((weekdaysElapsed * 2) + weekendsElapsed);
 
     //Number of swipes left
     const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);

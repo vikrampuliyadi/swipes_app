@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SignUpPage() {
+  let navigate = useNavigate();
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,6 +41,7 @@ function SignUpPage() {
       .post("http://localhost:3000/users/add", user)
       .then((response) => {
         console.log(response.data);
+        navigate("/Login");
       })
       .catch((error) => {
         console.log(error);
@@ -122,41 +124,3 @@ function SignUpPage() {
 // }
 
 export default SignUpPage;
-
-// <form onSubmit={handleSubmit}>
-//   <h1>Sign Up</h1>
-
-//   {error && <p>{error}</p>}
-
-//   <label>
-//     Email:
-//     <input
-//       type="email"
-//       value={email}
-//       onChange={handleEmailChange}
-//       required
-//     />
-//   </label>
-
-//   <label>
-//     Password:
-//     <input
-//       type="password"
-//       value={password}
-//       onChange={handlePasswordChange}
-//       required
-//     />
-//   </label>
-
-//   <label>
-//     Confirm Password:
-//     <input
-//       type="password"
-//       value={confirmPassword}
-//       onChange={handleConfirmPasswordChange}
-//       required
-//     />
-//   </label>
-
-//   <button type="submit">Sign Up</button>
-// </form>

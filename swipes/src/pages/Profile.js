@@ -284,6 +284,17 @@ function Profile() {
           <p className="thsub-head">
             Sold
           </p>
+          <div>
+          <SocialMediaPost
+            author="Edmond"
+            content="Bro someone lemme cop some swipes bro"
+            price={9}
+            diningHall="BPlate"
+            timestamp="February 18, 2023 12:34 PM"
+            paymentType="Zelle"
+            date="Monday 5-6PM"
+          />
+          </div>
       </div>
       </header>
     </div>

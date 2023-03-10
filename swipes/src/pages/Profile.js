@@ -220,6 +220,9 @@ function Profile() {
         <div>
           <img src={profilePic} className="profile-picture" alt="Profile" />
         </div>
+        <p className="name" style={{ color: "white" }}>
+          Firstname Lastname
+        </p>
         <p className="sc-head" style={{ color: "white" }}>
           UCLA Recommended Amount
         </p>

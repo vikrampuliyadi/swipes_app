@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import hamIcon from "../imgs/hamburger-icon.png";
 import "./Create_Requests.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+//import { getUserInfo } from "../../backend/routes/users";
 
 function Create_Requests() {
   const [diningHall, setDiningHall] = useState("");
@@ -13,13 +15,59 @@ function Create_Requests() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  //const userInfo = getUserInfo(session.id);
+  // if (userInfo) {
+  //   console.log(`User email: ${userInfo.email}`);
+  // } else {
+  //   console.log("No user information available");
+  // }
+
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleSubmit = (event) => {
+  // const getUserEmail = async () => {
+  //   axios
+  //     .get("http://localhost:3000/users/api/user")
+  //     .then((response) => {
+  //       const email = await response.data.email;
+  //       console.log("HERE");
+  //       console.log(email); // log user's email to the console
+  //     })
+  //     .catch((error) => {
+  //       console.log("THERE");
+  //       console.error(error);
+  //     });
+  //   return email;
+  // };
+
+  // const email = getUserEmail();
+
+  const getUserEmail = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/users/api/user");
+      const email = response.data.email;
+      console.log("HERE");
+      console.log(email); // log user's email to the console
+      return email;
+    } catch (error) {
+      console.log("THERE");
+      console.error(error);
+    }
+  };
+
+  const getEmail = async () => {
+    const email = await getUserEmail();
+    console.log(email);
+  };
+
+  //const email = getEmail();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = {
+    const email = await getEmail();
+    const Create_Requests = {
+      email,
       diningHall,
       dateTime,
       price,
@@ -27,7 +75,8 @@ function Create_Requests() {
       contact,
       message,
     };
-    console.log(formData);
+    console.log("hello");
+    console.log(Create_Requests);
   };
 
   return (
@@ -85,48 +134,44 @@ function Create_Requests() {
         onChange={(event) => setMessage(event.target.value)}
       />
 
-      <div className="btn">
-        <Link to="/Main">
-          <input type="submit" value="Post" />
-        </Link>
-      </div>
+      <button className="btn">Post</button>
 
       <div>
-          <button className="hamburger-menu-button" onClick={handleMenuClick}>
-            <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
-          </button>
-          {isMenuOpen && (
-              <div>
-                <nav>
-                  <ul className="hamburger-menu">
-                    <li>
-                      <Link to="/Main">
-                        <button className="ham-list-item">Feed</button>
-                      </Link>
-                    </li>
-                    <div className="space-between-menu-items"></div>
-                    <li>
-                      <Link to="/Create_Requests">
-                        <button className="ham-list-item">Post</button>
-                      </Link>
-                    </li>
-                    <div className="space-between-menu-items"></div>
-                    <li>
-                      <Link to="/Profile">
-                        <button className="ham-list-item">Profile</button>
-                      </Link>
-                    </li>
-                    <div className="space-between-menu-items"></div>
-                    <li>
-                      <Link to="/Home">
-                        <button className="dropdown ham-list-item">Sign Out</button>
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-          )}
-        </div>
+        <button className="hamburger-menu-button" onClick={handleMenuClick}>
+          <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
+        </button>
+        {isMenuOpen && (
+          <div>
+            <nav>
+              <ul className="hamburger-menu">
+                <li>
+                  <Link to="/Main">
+                    <button className="ham-list-item">Feed</button>
+                  </Link>
+                </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Create_Requests">
+                    <button className="ham-list-item">Post</button>
+                  </Link>
+                </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Profile">
+                    <button className="ham-list-item">Profile</button>
+                  </Link>
+                </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Home">
+                    <button className="dropdown ham-list-item">Sign Out</button>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
+      </div>
     </form>
   );
 }

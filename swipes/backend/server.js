@@ -33,9 +33,10 @@ const postsRouter = require("./routes/posts");
 app.use("/users", usersRouter);
 app.use("/posts", postsRouter);
 
-app.get("/", function (req, res) {
-  res.send("Hello World!");
-});
+// app.get("/Create_Requests", (req, res) => {
+//   res.render("Create_Requests", { email: req.session.user.email });
+//   console.log("email something");
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);

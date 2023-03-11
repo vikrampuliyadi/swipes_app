@@ -2,6 +2,16 @@ const router = require("express").Router();
 let Post = require("../models/post.model");
 const session = require("express-session");
 
+const sessionConfig = {
+  secret: 'your_secret_key_here',
+  resave: false,
+  saveUninitialized: true,
+};
+
+const sessionMiddleware = session(sessionConfig);
+
+router.use(sessionMiddleware);
+
 router.route("/").get((req, res) => {
   Post.find()
     .then((posts) => res.json(posts))
@@ -28,7 +38,7 @@ router.route("/add").post((req, res) => {
   });
   newPost
     .save()
-    .then(() => res.json("User added!"))
+    .then(() => res.json("Post added!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 

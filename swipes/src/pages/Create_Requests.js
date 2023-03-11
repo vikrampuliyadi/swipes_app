@@ -26,35 +26,32 @@ function Create_Requests() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // const getUserEmail = async () => {
-  //   axios
-  //     .get("http://localhost:3000/users/api/user")
-  //     .then((response) => {
-  //       const email = await response.data.email;
-  //       console.log("HERE");
-  //       console.log(email); // log user's email to the console
-  //     })
-  //     .catch((error) => {
-  //       console.log("THERE");
-  //       console.error(error);
-  //     });
-  //   return email;
-  // };
-
-  // const email = getUserEmail();
-
   const getUserEmail = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/users/api/user");
-      const email = response.data.email;
-      console.log("HERE");
-      console.log(email); // log user's email to the console
-      return email;
-    } catch (error) {
-      console.log("THERE");
-      console.error(error);
-    }
+    axios
+      .get("http://localhost:3000/users/api/user")
+      .then((response) => {
+        const email = response.data.email;
+        console.log("HERE");
+        console.log(email); // log user's email to the console
+      })
+      .catch((error) => {
+        console.log("THERE");
+        console.error(error);
+      });
   };
+
+  // const getUserEmail = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:3000/users/api/user");
+  //     const email = response.data.email;
+  //     console.log("HERE");
+  //     console.log(email); // log user's email to the console
+  //     return email;
+  //   } catch (error) {
+  //     console.log("THERE");
+  //     console.error(error);
+  //   }
+  // };
 
   const getEmail = async () => {
     const email = await getUserEmail();
@@ -119,7 +116,7 @@ function Create_Requests() {
 
       <label htmlFor="contact">Contact Info:</label>
       <input
-        type="email"
+        type="text"
         id="contact"
         name="contact"
         value={contact}

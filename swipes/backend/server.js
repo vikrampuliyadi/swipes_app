@@ -1,14 +1,34 @@
 const express = require("express");
+const session = require("express-session");
 const cors = require("cors");
 const mongoose = require("mongoose");
+//const MongoStore = require('connect-mongo')(session);
 
 require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+const crypto = require("crypto");
+const { ErrorResponse } = require("@remix-run/router");
+const secretKey = crypto.randomBytes(32).toString("hex");
+
+
+const sessionConfig = {
+  secret: 'your_secret_key_here',
+  resave: false,
+  saveUninitialized: true,
+  
+};
+
+const sessionMiddleware = session(sessionConfig);
+
+app.use(sessionMiddleware);
+
 app.use(cors());
 app.use(express.json());
+
+
 
 const uri = process.env.ATLAS_URI;
 const connection = mongoose.connection;
@@ -33,11 +53,9 @@ const postsRouter = require("./routes/posts");
 app.use("/users", usersRouter);
 app.use("/posts", postsRouter);
 
-// app.get("/Create_Requests", (req, res) => {
-//   res.render("Create_Requests", { email: req.session.user.email });
-//   console.log("email something");
-// });
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+
+module.exports = sessionMiddleware;

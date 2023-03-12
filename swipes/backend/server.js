@@ -3,7 +3,7 @@ const session = require("express-session");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const passport = require("./passport-config");
-//const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 
 require("dotenv").config();
 
@@ -14,11 +14,18 @@ const crypto = require("crypto");
 const { ErrorResponse } = require("@remix-run/router");
 const secretKey = crypto.randomBytes(32).toString("hex");
 
+const sessionStore = MongoStore.create({
+  mongoUrl: "mongodb+srv://admin:admin12345@bswipes.2lrgcda.mongodb.net/?retryWrites=true&w=majority",
+  collectionName: 'sessions' // specify a collection name to store session data
+});
 const sessionConfig = {
   secret: secretKey,
   resave: false,
   saveUninitialized: false,
+  store: sessionStore,
+  cookie: { maxAge: 60 * 60 * 1000 }
 };
+
 
 const sessionMiddleware = session(sessionConfig);
 

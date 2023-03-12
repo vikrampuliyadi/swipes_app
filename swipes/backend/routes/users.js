@@ -1,21 +1,6 @@
 const router = require("express").Router();
 let User = require("../models/user.model");
-const express = require("express");
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
 const passport = require("../passport-config");
-
-//const { sessionMiddleware } = require('../server');
-
-// const sessionConfig = {
-//   secret: "your_secret_key_here",
-//   resave: false,
-//   saveUninitialized: true,
-// };
-
-// const sessionMiddleware = session(sessionConfig);
-
-// router.use(sessionMiddleware);
 
 router.route("/").get((req, res) => {
   User.find()
@@ -31,46 +16,11 @@ router.post(
   "/auth/signin",
   passport.authenticate("local", { failureRedirect: "/users/signin-failed" }),
   (req, res) => {
-    res.json({ message: "You are successfully logged in", auth: true });
+    req.session.email = req.user.email;
+    res.json({ message: req.session, auth: true });
+    // res.json({ message: "You are successfully logged in", auth: true });
   }
 );
-
-// function isAuthenticated(req, res, next) {
-//   // `req.isAuthenticated()` is a method provided by Passport.js
-//   // that returns `true` if the user is authenticated, and `false` otherwise
-//   if (req.isAuthenticated()) {
-//     return next();
-//   } else {
-//     res.status(401).send("User not authenticated");
-//   }
-// }
-// router.post(
-//   "/auth/signin",
-//   passport.authenticate("local", {
-//     failureRedirect: "http://localhost:3001/Login",
-//   }),
-//   function (req, res) {
-//     res.redirect("http://localhost:3001/Main");
-//   }
-// );
-
-// router.post("/auth/signin", async (req, res) => {
-//   const { email, password } = req.body;
-//   const user = await User.findOne({ email: email, password: password });
-//   if (user) {
-//     req.session.email = email;
-//     res.json({
-//       //message: "You are successfully logged in",
-//       message: req.session,
-//       auth: true,
-//     });
-//   } else {
-//     res.json({
-//       message: "Unable to login",
-//       auth: false,
-//     });
-//   }
-// });
 
 router.get("/email", (req, res) => {
   // Check if user is authenticated

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import hamIcon from "../imgs/hamburger-icon.png";
 import "./Create_Requests.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 //import { getUserInfo } from "../../backend/routes/users";
 
 function Create_Requests() {
+  let navigate = useNavigate();
   const [diningHall, setDiningHall] = useState("");
   const [dateTime, setDateTime] = useState("");
   const [price, setPrice] = useState("");
@@ -61,17 +62,27 @@ function Create_Requests() {
     event.preventDefault();
     const email = await getUserEmail();
     console.log(email);
-    // const Create_Requests = {
-    //   email,
-    //   diningHall,
-    //   dateTime,
-    //   price,
-    //   payment,
-    //   contact,
-    //   message,
-    // };
-    // console.log("hello");
-    // console.log(Create_Requests);
+    const post = {
+      email: email,
+      diningHall: diningHall,
+      date: dateTime,
+      price: price,
+      paymentType: payment,
+      contactInfo: contact,
+      message: message,
+    };
+    console.log(post);
+
+    axios
+    .post("http://localhost:3000/posts/add", post)
+    .then((response) => {
+      console.log(response.data);
+      navigate("/Main");
+    })
+    .catch((error) => {
+      console.log(error);
+      window.alert("Post could not be created. Please try again.");
+    });
   };
 
   return (

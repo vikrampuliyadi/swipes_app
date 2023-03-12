@@ -2,16 +2,6 @@ const router = require("express").Router();
 let Post = require("../models/post.model");
 const session = require("express-session");
 
-const sessionConfig = {
-  secret: 'your_secret_key_here',
-  resave: false,
-  saveUninitialized: true,
-};
-
-const sessionMiddleware = session(sessionConfig);
-
-router.use(sessionMiddleware);
-
 router.route("/").get((req, res) => {
   Post.find()
     .then((posts) => res.json(posts))
@@ -21,8 +11,8 @@ router.route("/").get((req, res) => {
 router.route("/add").post((req, res) => {
   const email = req.body.email;
   const diningHall = req.body.diningHall;
-  const date = Date.parse(req.body.date);
-  const price = Number(req.body.price);
+  const date = req.body.date;
+  const price = req.body.price;
   const paymentType = req.body.paymentType;
   const contactInfo = req.body.contactInfo;
   const message = req.body.message;

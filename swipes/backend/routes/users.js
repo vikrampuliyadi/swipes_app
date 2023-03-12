@@ -15,15 +15,6 @@ router.get("/signin-failed", (req, res) => {
   res.status(401).json({ message: "Failed to authenticate", auth: false });
 });
 
-// router.post(
-//   "/auth/signin",
-//   passport.authenticate("local", { failureRedirect: "/users/signin-failed" }),
-//   (req, res) => {
-//     req.session.email = req.user.email;
-//     res.json({ message: req.session, auth: true });
-//     // res.json({ message: "You are successfully logged in", auth: true });
-//   }
-// );
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];

@@ -216,81 +216,82 @@ function Profile() {
   };
 
   return (
-    <div className="profile" style={{ backgroundColor: "#109BFF" }}>
+    <div
+      className="profile"
+      // style={{ backgroundColor: "#109BFF" }}
+    >
+      <button className="hamburger-menu-button" onClick={handleMenuClick}>
+        <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
+      </button>
       <header className="profile-header">
-        <div>
-          <button className="hamburger-menu-button" onClick={handleMenuClick}>
-            <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
-          </button>
-          {isMenuOpen && (
-            <div>
-              <nav>
-                <ul className="hamburger-menu">
-                  <li>
-                    <Link to="/Main">
-                      <button className="ham-list-item">Feed</button>
-                    </Link>
-                  </li>
-                  <div className="space-between-menu-items"></div>
-                  <li>
-                    <Link to="/Create_Requests">
-                      <button className="ham-list-item">Post</button>
-                    </Link>
-                  </li>
-                  <div className="space-between-menu-items"></div>
-                  <li>
-                    <Link to="/Profile">
-                      <button className="ham-list-item">Profile</button>
-                    </Link>
-                  </li>
-                  <div className="space-between-menu-items"></div>
-                  <li>
-                    <Link to="/Home">
-                      <button className="dropdown ham-list-item">
-                        Sign Out
-                      </button>
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          )}
-        </div>
+        {isMenuOpen && (
+          <div>
+            <nav>
+              <ul className="hamburger-menu">
+                <li>
+                  <Link to="/Main">
+                    <button className="ham-list-item">Feed</button>
+                  </Link>
+                </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Create_Requests">
+                    <button className="ham-list-item">Post</button>
+                  </Link>
+                </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Profile">
+                    <button className="ham-list-item">Profile</button>
+                  </Link>
+                </li>
+                <div className="space-between-menu-items"></div>
+                <li>
+                  <Link to="/Home">
+                    <button className="dropdown ham-list-item">Sign Out</button>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
         <div className="padding"></div>
-        <div>
-          <img src={profilePic} className="profile-picture" alt="Profile" />
+        <div className="profile-rectangle">
+          <div>
+            <img src={profilePic} className="profile-picture" alt="Profile" />
+          </div>
+          <div>
+            {[...Array(5)].map((_, index) => (
+              <Star
+                key={index}
+                filled={index < rating}
+                onClick={() => handleStarClick(index)}
+              />
+            ))}
+          </div>
+          <p className="sc-head" style={{ color: "white" }}>
+            UCLA Recommended Amount
+          </p>
+          <p className="btncontainer">
+            <input type="button" value="11R" onClick={elevenRSwipesLeft} />
+            <input type="button" value="11P" onClick={elevenPSwipesLeft} />
+            <input type="button" value="14R" onClick={fourteenRSwipesLeft} />
+            <input type="button" value="14P" onClick={fourteenPSwipesLeft} />
+            <input type="button" value="19R" onClick={nineteenRSwipesLeft} />
+            <input type="button" value="19P" onClick={nineteenPSwipesLeft} />
+          </p>
+          <form
+            className="btncontainer"
+            action="https://myhousing.hhs.ucla.edu/shib/swipes"
+            method="get"
+            target="_blank"
+          >
+            <button className="btn-to-ucladining" type="submit">
+              Current Meal Swipe Balance
+            </button>
+          </form>
+          <div className="padding"></div>
         </div>
-        <div>
-          {[...Array(5)].map((_, index) => (
-            <Star
-              key={index}
-              filled={index < rating}
-              onClick={() => handleStarClick(index)}
-            />
-          ))}
-        </div>
-        <p className="sc-head" style={{ color: "white" }}>
-          UCLA Recommended Amount
-        </p>
-        <p className="btncontainer">
-          <input type="button" value="11R" onClick={elevenRSwipesLeft} />
-          <input type="button" value="11P" onClick={elevenPSwipesLeft} />
-          <input type="button" value="14R" onClick={fourteenRSwipesLeft} />
-          <input type="button" value="14P" onClick={fourteenPSwipesLeft} />
-          <input type="button" value="19R" onClick={nineteenRSwipesLeft} />
-          <input type="button" value="19P" onClick={nineteenPSwipesLeft} />
-        </p>
-        <form
-          className="btncontainer"
-          action="https://myhousing.hhs.ucla.edu/shib/swipes"
-          method="get"
-          target="_blank"
-        >
-          <button className="btn-to-ucladining" type="submit">
-            Current Meal Swipe Balance
-          </button>
-        </form>
-        <div className="padding"></div>
       </header>
     </div>
   );

@@ -52,7 +52,7 @@ function SignUpPage() {
     <div className="background">
       <div className="shape"></div>
       <div className="shape1"></div>
-      <form>
+      <form className="form-signup">
         <h3>Sign Up</h3>
 
         <label htmlFor="firstname">First Name</label>
@@ -69,7 +69,7 @@ function SignUpPage() {
 
         <Link to="/Main">
           {" "}
-          <button>Create Account</button>
+          <button className="btn-sign-up">Create Account</button>
         </Link>
         {/* <div className="social">
           <div className="go">

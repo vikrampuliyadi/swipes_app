@@ -2,15 +2,16 @@ form {
   width: 60%;
   margin: 0 auto;
   margin-top: 30px;
+  justify-content: center;
 }
 
-body {
+/* body {
   background-color: #109bff;
-}
+} */
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -18,20 +19,6 @@ label {
   line-height: 36px;
   text-align: left;
   color: #ffffff;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  height: 3rem;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 30px;
-  background: #d9d9d9;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  color: #000000;
 }
 
 input[type="submit"] {
@@ -48,16 +35,15 @@ input[type="submit"] {
   border-radius: 40px;
   cursor: pointer;
   position: relative;
-  margin: auto;
+  margin-top: 2rem;
 }
-
+input[type="submit"]:hover {
+  background-color: #1a2c45;
+  margin-top: 2rem;
+}
 .btn {
   margin: auto;
   text-align: center;
-}
-
-input[type="submit"]:hover {
-  background-color: #ebba34;
 }
 
 .hamburger-menu-button {
@@ -103,4 +89,32 @@ input[type="submit"]:hover {
 .space-between-menu-items {
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.form {
+  height: 80%;
+  width: 50%;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.595);
+  margin: auto;
+}
+
+input[type="text"] {
+  width: 80%;
+  margin: 0.5rem;
+  padding-bottom: 0;
+  height: 100%;
 }

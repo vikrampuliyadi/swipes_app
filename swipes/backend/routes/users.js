@@ -1,6 +1,9 @@
 const router = require("express").Router();
 let User = require("../models/user.model");
 const passport = require("../passport-config");
+const jwt = require('jsonwebtoken');
+
+const JWT_SECRET = "my-secret-key";
 
 router.route("/").get((req, res) => {
   User.find()
@@ -12,41 +15,89 @@ router.get("/signin-failed", (req, res) => {
   res.status(401).json({ message: "Failed to authenticate", auth: false });
 });
 
-router.post(
-  "/auth/signin",
-  passport.authenticate("local", { failureRedirect: "/users/signin-failed" }),
-  (req, res) => {
-    req.session.email = req.user.email;
-    res.json({ message: req.session, auth: true });
-    // res.json({ message: "You are successfully logged in", auth: true });
+// router.post(
+//   "/auth/signin",
+//   passport.authenticate("local", { failureRedirect: "/users/signin-failed" }),
+//   (req, res) => {
+//     req.session.email = req.user.email;
+//     res.json({ message: req.session, auth: true });
+//     // res.json({ message: "You are successfully logged in", auth: true });
+//   }
+// );
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (token == null) {
+    return res.sendStatus(401);
   }
-);
 
-router.get("/email", (req, res) => {
-  // Check if user is authenticated
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.sendStatus(403);
+    }
 
-  // Retrieve user's email
+    req.user = user;
+    next();
+  });
+}
+
+
+router.post('/auth/signin', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  User.findOne({ email: email })
+    .then((user) => {
+      if (!user) {
+        res.status(401).json({ message: 'Invalid email or password' });
+      } else {
+        if(password === user.password) {
+          const token = jwt.sign({ email: user.email }, JWT_SECRET);
+          res.cookie('token', token);
+          res.json({ token: token });
+        } else {
+          res.status(401).json({ message: 'Invalid email or password' });
+        }
+      }
+    })
+    .catch((err) => res.status(400).json('Error: ' + err));
+});
+
+router.get('/email', authenticateToken, (req, res) => {
   const userEmail = req.user.email;
   res.json({ userEmail });
-  // Do something with userEmail...
 });
 
-router.get("/api/user", async (req, res) => {
+router.get('/api/user', authenticateToken, async (req, res) => {
   try {
-    // const sessionID = req.session.id; // get the session ID from the client cookie
-    // const sessionData = req.sessionStore.get(sessionID); // get session data using Promise syntax
-    const email = req.session.email;
+    const email = req.user.email;
     if (email) {
-      // fetch user information using the email
-      //const user = await User.findOne({ email: email }).select("email");
-      res.json(email);
+      const user = await User.findOne({ email: email }).select('email');
+      res.json(user);
     } else {
-      res.status(401).json({ message: "Unauthorized" });
+      res.status(401).json({ message: 'Unauthorized' });
     }
   } catch (err) {
-    res.status(500).json({ message: "Error getting session data", error: err });
+    res.status(500).json({ message: 'Error getting user data', error: err });
   }
 });
+
+// router.get("/api/user", async (req, res) => {
+//   try {
+//     // const sessionID = req.session.id; // get the session ID from the client cookie
+//     // const sessionData = req.sessionStore.get(sessionID); // get session data using Promise syntax
+//     const email = req.session.email;
+//     if (email) {
+//       // fetch user information using the email
+//       //const user = await User.findOne({ email: email }).select("email");
+//       res.json(email);
+//     } else {
+//       res.status(401).json({ message: "Unauthorized" });
+//     }
+//   } catch (err) {
+//     res.status(500).json({ message: "Error getting session data", error: err });
+//   }
+// });
 
 router.route("/add").post((req, res) => {
   const firstname = req.body.firstname;

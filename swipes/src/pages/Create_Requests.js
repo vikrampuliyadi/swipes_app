@@ -25,10 +25,14 @@ function Create_Requests() {
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldkBnbWFpbC5jb20iLCJpYXQiOjE2Nzg2NDQ4OTV9.2gNR2-kk1mr-1VvkGXiixHxPJAIVMwR6WZ9IoYlowGg";
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
 
   const getUserEmail = async () => {
     axios
-      .get("http://localhost:3000/users/api/user")
+      .get("http://localhost:3000/users/api/user", { withCredentials: true })
       .then((response) => {
         const email = response.data.email;
         console.log("HERE");
@@ -62,17 +66,8 @@ function Create_Requests() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    axios
-      .get("http://localhost:3000/users/email", { withCredentials: true })
-      .then((response) => {
-        const email = response.data;
-
-        console.log(email);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    // const email = await getEmail();
+    const email = await getEmail();
+    console.log(email);
     // const Create_Requests = {
     //   email,
     //   diningHall,

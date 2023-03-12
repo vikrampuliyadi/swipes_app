@@ -42,7 +42,7 @@ function Login() {
       .post("http://localhost:3000/users/auth/signin/", { email, password })
       .then((response) => {
         const { message, auth } = response.data;
-        console.log(message); // "You are successfully login" or "Unable to login"
+        console.log(response.data); // "You are successfully login" or "Unable to login"
 
         navigate("/Main");
         console.log(auth); // true or false

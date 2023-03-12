@@ -1,7 +1,7 @@
 const router = require("express").Router();
 let User = require("../models/user.model");
 const passport = require("../passport-config");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const JWT_SECRET = "my-secret-key";
 
@@ -25,8 +25,8 @@ router.get("/signin-failed", (req, res) => {
 //   }
 // );
 function authenticateToken(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
   if (token == null) {
     return res.sendStatus(401);
   }
@@ -41,47 +41,47 @@ function authenticateToken(req, res, next) {
   });
 }
 
-
-router.post('/auth/signin', (req, res) => {
+router.post("/auth/signin", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
   User.findOne({ email: email })
     .then((user) => {
       if (!user) {
-        res.status(401).json({ message: 'Invalid email or password' });
+        res.status(401).json({ message: "Invalid email or password" });
       } else {
-        if(password === user.password) {
+        if (password === user.password) {
           const token = jwt.sign({ email: user.email }, JWT_SECRET);
-          res.cookie('token', token, {
-            sameSite: 'none', 
+          res.cookie("token", token, {
+            sameSite: "none",
             secure: true,
-            maxAge: 3600000 });
+            maxAge: 3600000,
+          });
           res.json({ token: token });
         } else {
-          res.status(401).json({ message: 'Invalid email or password' });
+          res.status(401).json({ message: "Invalid email or password" });
         }
       }
     })
-    .catch((err) => res.status(400).json('Error: ' + err));
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.get('/email', authenticateToken, (req, res) => {
+router.get("/email", authenticateToken, (req, res) => {
   const userEmail = req.user.email;
   res.json({ userEmail });
 });
 
-router.get('/api/user', authenticateToken, async (req, res) => {
+router.get("/api/user", authenticateToken, async (req, res) => {
   try {
     const email = req.user.email;
     if (email) {
-      const user = await User.findOne({ email: email }).select('email');
+      const user = await User.findOne({ email: email }).select("email");
       res.json(user);
     } else {
-      res.status(401).json({ message: 'Unauthorized' });
+      res.status(401).json({ message: "Unauthorized" });
     }
   } catch (err) {
-    res.status(500).json({ message: 'Error getting user data', error: err });
+    res.status(500).json({ message: "Error getting user data", error: err });
   }
 });
 

@@ -26,60 +26,40 @@ function Create_Requests() {
     setIsMenuOpen(!isMenuOpen);
   };
   const getTokenFromCookies = () => {
-    const cookies = document.cookie.split(';');
+    const cookies = document.cookie.split(";");
     for (let i = 0; i < cookies.length; i++) {
       const cookie = cookies[i].trim();
-      if (cookie.startsWith('token=')) {
-        return cookie.substring('token='.length, cookie.length);
+      if (cookie.startsWith("token=")) {
+        return cookie.substring("token=".length, cookie.length);
       }
     }
     return null;
   };
   const token = getTokenFromCookies();
   const config = {
-    headers: { 
+    headers: {
       Authorization: `Bearer ${token}`,
-      withCredentials: true
-  },
+      withCredentials: true,
+    },
   };
 
   const getUserEmail = async () => {
-    axios
-      .get("http://localhost:3000/users/api/user", config)
-      .then((response) => {
-        const email = response.data.email;
-        console.log("HERE");
-        console.log(email); // log user's email to the console
-      })
-      .catch((error) => {
-        console.log("THERE");
-        console.error(error);
-      });
+    try {
+      const response = await axios.get(
+        "http://localhost:3000/users/api/user",
+        config
+      );
+      const email = response.data.email;
+      //console.log(email); // log user's email to the console
+      return email;
+    } catch (error) {
+      console.error(error);
+    }
   };
-
-  // const getUserEmail = async () => {
-  //   try {
-  //     const response = await axios.get("http://localhost:3000/users/api/user");
-  //     const email = response.data.email;
-  //     console.log("HERE");
-  //     console.log(email); // log user's email to the console
-  //     return email;
-  //   } catch (error) {
-  //     console.log("THERE");
-  //     console.error(error);
-  //   }
-  // };
-
-  const getEmail = async () => {
-    const email = await getUserEmail();
-    console.log(email);
-  };
-
-  //const email = getEmail();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const email = await getEmail();
+    const email = await getUserEmail();
     console.log(email);
     // const Create_Requests = {
     //   email,

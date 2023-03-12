@@ -1,5 +1,9 @@
 const router = require("express").Router();
 let User = require("../models/user.model");
+const passport = require("../passport-config");
+const jwt = require("jsonwebtoken");
+
+const JWT_SECRET = "my-secret-key";
 
 router.route("/").get((req, res) => {
   User.find()
@@ -7,41 +11,87 @@ router.route("/").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-// router.route("/:email").get((req, res) => {
-//   User.findOne({ email: req.params.email, password: req.params.password })
-//     .then((user) => {
-//       if (user) {
-//         console.log("User exists in database");
-//         res.json(user);
-//       } else {
-//         console.log("User does not exist in database");
-//         res.status(404).json("User not found");
-//       }
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.status(500).json("Error: " + err);
-//     });
-// });
+router.get("/signin-failed", (req, res) => {
+  res.status(401).json({ message: "Failed to authenticate", auth: false });
+});
 
-router.route("/:email/:password").get((req, res) => {
-  console.log("FUCK");
-  const { email, password } = req.params;
-  User.findOne({ email: email, password: password })
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) {
+    return res.sendStatus(401);
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, user) => {
+    if (err) {
+      return res.sendStatus(403);
+    }
+
+    req.user = user;
+    next();
+  });
+}
+
+router.post("/auth/signin", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  User.findOne({ email: email })
     .then((user) => {
-      if (user) {
-        console.log("User exists in database");
-        res.json(user);
+      if (!user) {
+        res.status(401).json({ message: "Invalid email or password" });
       } else {
-        console.log("User does not exist in database");
-        res.status(404).json("User not found");
+        if (password === user.password) {
+          const token = jwt.sign({ email: user.email }, JWT_SECRET);
+          res.cookie("token", token, {
+            sameSite: "none",
+            secure: true,
+            maxAge: 3600000,
+          });
+          res.json({ token: token });
+        } else {
+          res.status(401).json({ message: "Invalid email or password" });
+        }
       }
     })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json("Error: " + err);
-    });
+    .catch((err) => res.status(400).json("Error: " + err));
 });
+
+router.get("/email", authenticateToken, (req, res) => {
+  const userEmail = req.user.email;
+  res.json({ userEmail });
+});
+
+router.get("/api/user", authenticateToken, async (req, res) => {
+  try {
+    const email = req.user.email;
+    if (email) {
+      const user = await User.findOne({ email: email }).select("email");
+      res.json(user);
+    } else {
+      res.status(401).json({ message: "Unauthorized" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: "Error getting user data", error: err });
+  }
+});
+
+// router.get("/api/user", async (req, res) => {
+//   try {
+//     // const sessionID = req.session.id; // get the session ID from the client cookie
+//     // const sessionData = req.sessionStore.get(sessionID); // get session data using Promise syntax
+//     const email = req.session.email;
+//     if (email) {
+//       // fetch user information using the email
+//       //const user = await User.findOne({ email: email }).select("email");
+//       res.json(email);
+//     } else {
+//       res.status(401).json({ message: "Unauthorized" });
+//     }
+//   } catch (err) {
+//     res.status(500).json({ message: "Error getting session data", error: err });
+//   }
+// });
 
 router.route("/add").post((req, res) => {
   const firstname = req.body.firstname;

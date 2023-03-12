@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 }
 
 .App-header {
@@ -85,4 +87,11 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.white-background {
+  background-color: white;
+  position: relative;
+  transform: rotate(5deg);
+  z-index: 10;
 }

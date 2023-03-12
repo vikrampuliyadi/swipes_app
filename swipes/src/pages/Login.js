@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Login.css";
-import "./SignUp.css";
 
 import { Link } from "react-router-dom";
 
@@ -9,20 +8,26 @@ function Login() {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="container">
-      <header>
-        <h1 className="head">Login</h1>
-      </header>
-      <body className="form">
-        <p className="title container">Email</p>
-        <input className="loginText1 container" />
-        <p className="title container">Password</p>
-        <input className="loginText2 container" />
+    <div className="background">
+      <div className="shape"></div>
+      <div className="shape1"></div>
+      <form className="form-login">
+        <h3>Login</h3>
+
+        <label htmlFor="username">Email</label>
+        <div className="login-input">
+          <input type="text" placeholder="Email" id="username" />
+        </div>
+
+        <label htmlFor="password">Password</label>
+        <div className="login-input">
+          <input type="text" placeholder="Password" id="password" />
+        </div>
         <Link to="/Main">
           {" "}
-          <button className="loginButton container">Login</button>
+          <button className="btn-login">Log In</button>
         </Link>
-      </body>
+      </form>
     </div>
   );
 }

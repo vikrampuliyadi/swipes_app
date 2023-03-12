@@ -1,3 +1,2 @@
-# swipes_app
-SwipeX is a online marketplace for UCLA student to buy and sell their dining hall swipes. We facilitate the platform for these exchanges, and connect buyers and sellers for an easy and simple transaction!
-
+# BSwipes
+Welcome to BSwipes, the premier marketplace for UCLA students to buy and sell meal plan swipes. Whether you're looking to save money by selling unused swipes or looking for an affordable way to enjoy delicious meals on campus, BSwipes is the solution you've been searching for. Our user-friendly platform makes it easy to find, purchase, and use swipes, so you can focus on what really matters: enjoying your time at UCLA. Join the BSwipes community today and experience the ultimate dining flexibility!

@@ -53,7 +53,10 @@ router.post('/auth/signin', (req, res) => {
       } else {
         if(password === user.password) {
           const token = jwt.sign({ email: user.email }, JWT_SECRET);
-          res.cookie('token', token);
+          res.cookie('token', token, {
+            sameSite: 'none', 
+            secure: true,
+            maxAge: 3600000 });
           res.json({ token: token });
         } else {
           res.status(401).json({ message: 'Invalid email or password' });

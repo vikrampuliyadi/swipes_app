@@ -39,7 +39,7 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3000/users/auth/signin/", { email, password })
+      .post("http://localhost:3000/users/auth/signin/", { email, password }, { withCredentials: true })
       .then((response) => {
         const { message, auth } = response.data;
         console.log(response.data); // "You are successfully login" or "Unable to login"

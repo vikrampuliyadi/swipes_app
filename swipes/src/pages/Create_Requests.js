@@ -25,14 +25,27 @@ function Create_Requests() {
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRldkBnbWFpbC5jb20iLCJpYXQiOjE2Nzg2NDQ4OTV9.2gNR2-kk1mr-1VvkGXiixHxPJAIVMwR6WZ9IoYlowGg";
+  const getTokenFromCookies = () => {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith('token=')) {
+        return cookie.substring('token='.length, cookie.length);
+      }
+    }
+    return null;
+  };
+  const token = getTokenFromCookies();
   const config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { 
+      Authorization: `Bearer ${token}`,
+      withCredentials: true
+  },
   };
 
   const getUserEmail = async () => {
     axios
-      .get("http://localhost:3000/users/api/user", { withCredentials: true })
+      .get("http://localhost:3000/users/api/user", config)
       .then((response) => {
         const email = response.data.email;
         console.log("HERE");

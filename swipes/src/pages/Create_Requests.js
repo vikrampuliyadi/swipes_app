@@ -62,18 +62,28 @@ function Create_Requests() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const email = await getEmail();
-    const Create_Requests = {
-      email,
-      diningHall,
-      dateTime,
-      price,
-      payment,
-      contact,
-      message,
-    };
-    console.log("hello");
-    console.log(Create_Requests);
+    axios
+      .get("http://localhost:3000/users/email", { withCredentials: true })
+      .then((response) => {
+        const email = response.data;
+
+        console.log(email);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    // const email = await getEmail();
+    // const Create_Requests = {
+    //   email,
+    //   diningHall,
+    //   dateTime,
+    //   price,
+    //   payment,
+    //   contact,
+    //   message,
+    // };
+    // console.log("hello");
+    // console.log(Create_Requests);
   };
 
   return (

@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const passport = require("./passport-config");
 //const MongoStore = require('connect-mongo')(session);
 
 require("dotenv").config();
@@ -13,22 +14,21 @@ const crypto = require("crypto");
 const { ErrorResponse } = require("@remix-run/router");
 const secretKey = crypto.randomBytes(32).toString("hex");
 
-
 const sessionConfig = {
-  secret: 'your_secret_key_here',
+  secret: secretKey,
   resave: false,
-  saveUninitialized: true,
-  
+  saveUninitialized: false,
 };
 
 const sessionMiddleware = session(sessionConfig);
 
 app.use(sessionMiddleware);
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3001", credentials: true }));
 app.use(express.json());
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 const uri = process.env.ATLAS_URI;
 const connection = mongoose.connection;
@@ -53,9 +53,6 @@ const postsRouter = require("./routes/posts");
 app.use("/users", usersRouter);
 app.use("/posts", postsRouter);
 
-
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
-
-module.exports = sessionMiddleware;

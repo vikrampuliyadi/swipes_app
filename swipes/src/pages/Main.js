@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SocialMediaPost from "../Components/SocialMediaPost.js";
-import DropdownMenu from "../Components/MenuPullDown.js";
+// import DropdownMenu from "../Components/MenuPullDown.js";
 import "./Main.css";
 import hamIcon from "../imgs/hamburger-icon.png";
 import { Link } from "react-router-dom";

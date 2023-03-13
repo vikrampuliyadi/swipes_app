@@ -241,15 +241,6 @@ function Profile() {
         <div>
           <img src={profilePic} className="profile-picture" alt="Profile" />
         </div>
-        <div>
-          {[...Array(5)].map((_, index) => (
-            <Star
-              key={index}
-              filled={index < rating}
-              onClick={() => handleStarClick(index)}
-            />
-          ))}
-        </div>
         <p className="sc-head" style={{ color: "white" }}>
           UCLA Recommended Amount
         </p>

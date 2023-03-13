@@ -13,6 +13,7 @@ function Create_Requests() {
   const [payment, setPayment] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  let acceptedPost = false;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -70,6 +71,7 @@ function Create_Requests() {
       paymentType: payment,
       contactInfo: contact,
       message: message,
+      accepted: acceptedPost,
     };
     console.log(post);
 

@@ -1,4 +1,4 @@
-body{
+/* body{
   background-color: #109bff;
 }
 .empty_space {
@@ -86,11 +86,11 @@ body{
   column-gap: 0.5rem;
   row-gap: 0.5rem;
   /* margin-bottom: 9.6rem; */
-}
+/* } */
 
 .logo {
   background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_6522516&psig=AOvVaw3dcKO0j1F-u5MAknJqhmVW&ust=1676848006235000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDr4OaXoP0CFQAAAAAdAAAAABAD);
-}
+} */
 
 .hamburger-menu-button {
   position: absolute;
@@ -143,10 +143,97 @@ body{
   font-size: 1.25rem;
 } */
 
-.accept-btn {
+/* .accept-btn {
   color: black;
   grid-column-start: 1;
   grid-row-start: 8;
   display: block;
   margin: 1rem;
+} */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* change this as needed */
+  grid-gap: 10px; /* adjust the gap between the elements */
+}
+
+
+.cards {
+  display: block;
+}
+
+.card {
+  display: block;
+  margin: 10px;
+  width: 600px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.card .image img {
+  max-width: 200%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card .content {
+  padding: 20px 30px;
+}
+
+.card.is-loading .image,
+.card.is-loading h2,
+.card.is-loading h4,
+.card.is-loading p {
+  background: #eee;
+  background: linear-gradient(
+    110deg,
+    #ececec 8%,
+    #f5f5f5 18%,
+    #ececec 33%
+  );
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+  animation: 1.5s shine linear infinite;
+}
+
+.card.is-loading .image {
+  height: 200px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card.is-loading h2 {
+  height: 30px;
+}
+
+.card.is-loading h4 {
+  height: 25px;
+}
+
+.card.is-loading p {
+  height: 70px;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }

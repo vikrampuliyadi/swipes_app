@@ -77,7 +77,7 @@
     box-sizing: border-box;
 } */
 body{
-  background-color: #080710;
+  background-color: #ffffff;
 }
 .background{
   width: 430px;
@@ -112,7 +112,7 @@ body{
 }
 form{
   height: 650px;
-  width: 400px;
+  width: 370px;
   background-color: rgba(255,255,255,0.13);
   position: absolute;
   transform: translate(-50%,-50%);
@@ -126,7 +126,7 @@ form{
 }
 form *{
   font-family: 'Poppins',sans-serif;
-  color: #ffffff;
+  color: #000000;
   letter-spacing: 0.5px;
   outline: none;
   border: none;

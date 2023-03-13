@@ -35,9 +35,9 @@ function Login() {
   
   return (
     <div className="background">
-      <div className="shape"></div>
+      <div className="login-shape"></div>
       <div className="shape1"></div>
-      <form>
+      <form className = "form-login">
         <h3>Login</h3>
 
         <label htmlFor="username">Email</label>

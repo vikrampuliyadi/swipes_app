@@ -16,7 +16,7 @@ router.route("/add").post((req, res) => {
   const paymentType = req.body.paymentType;
   const contactInfo = req.body.contactInfo;
   const message = req.body.message;
-  let accepted = false;
+  let accepted = "false";
 
   const newPost = new Post({
     email,

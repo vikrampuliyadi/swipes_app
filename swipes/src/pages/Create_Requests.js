@@ -13,8 +13,7 @@ function Create_Requests() {
   const [payment, setPayment] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
-  let acceptedPost = false;
-
+  let acceptedPost = "false";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   //const userInfo = getUserInfo(session.id);

@@ -118,3 +118,24 @@ input[type="text"] {
   padding-bottom: 0;
   height: 100%;
 }
+
+.post-btn {
+}
+
+.post-btn {
+  margin-top: 50px;
+  width: 20rem;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-btn:hover {
+  background-color: #080710;
+  color: white;
+  transition: 0.75s;
+}

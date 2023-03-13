@@ -76,23 +76,6 @@ router.get("/api/user", authenticateToken, async (req, res) => {
   }
 });
 
-// router.get("/api/user", async (req, res) => {
-//   try {
-//     // const sessionID = req.session.id; // get the session ID from the client cookie
-//     // const sessionData = req.sessionStore.get(sessionID); // get session data using Promise syntax
-//     const email = req.session.email;
-//     if (email) {
-//       // fetch user information using the email
-//       //const user = await User.findOne({ email: email }).select("email");
-//       res.json(email);
-//     } else {
-//       res.status(401).json({ message: "Unauthorized" });
-//     }
-//   } catch (err) {
-//     res.status(500).json({ message: "Error getting session data", error: err });
-//   }
-// });
-
 router.route("/add").post((req, res) => {
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;

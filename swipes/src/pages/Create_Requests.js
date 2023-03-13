@@ -74,15 +74,15 @@ function Create_Requests() {
     console.log(post);
 
     axios
-    .post("http://localhost:3000/posts/add", post)
-    .then((response) => {
-      console.log(response.data);
-      navigate("/Main");
-    })
-    .catch((error) => {
-      console.log(error);
-      window.alert("Post could not be created. Please try again.");
-    });
+      .post("http://localhost:3000/posts/add", post)
+      .then((response) => {
+        console.log(response.data);
+        navigate("/Main");
+      })
+      .catch((error) => {
+        console.log(error);
+        window.alert("Post could not be created. Please try again.");
+      });
   };
 
   return (
@@ -142,8 +142,7 @@ function Create_Requests() {
             onChange={(event) => setMessage(event.target.value)}
           />
 
-          <button className="btn">Post</button>
-
+          <button className="post-btn">Post</button>
         </form>
       </div>
 

@@ -89,8 +89,14 @@ input {
   cursor: pointer;
   border: #080710;
   border-width: 10px;
-  background-color: #23a2f6;
 }
+
+.btn-login:hover {
+  background-color: #080710;
+  color: white;
+  transition: 0.75s;
+}
+
 .social {
   margin-top: 30px;
   display: flex;

@@ -39,7 +39,11 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3000/users/auth/signin/", { email, password }, { withCredentials: true })
+      .post(
+        "http://localhost:3000/users/auth/signin/",
+        { email, password },
+        { withCredentials: true }
+      )
       .then((response) => {
         const { message, auth } = response.data;
         console.log(response.data); // "You are successfully login" or "Unable to login"
@@ -70,55 +74,41 @@ function Login() {
   // };
 
   return (
-    // <div className="background">
-    //   <div className="shape"></div>
-    //   <div className="shape1"></div>
-    //   <form className="form-login">
-    //     <h3>Login</h3>
+    <div className="background">
+      <div className="shape"></div>
+      <div className="shape1"></div>
 
-    //     <label htmlFor="username">Email</label>
-    //     <div className="login-input">
-    //       <input type="text" placeholder="Email" id="username" />
-    //     </div>
+      <form className="form-login" onSubmit={handleSubmit}>
+        <h3>Login</h3>
 
-    //     <label htmlFor="password">Password</label>
-    //     <div className="login-input">
-    //       <input type="text" placeholder="Password" id="password" />
-    //     </div>
-    //     <Link to="/Main">
-    //       {" "}
-    //       <button className="btn-login">Log In</button>
-    //     </Link>
-    //   </form>
-    // </div>
-    <form onSubmit={handleSubmit}>
-      <div className="container">
-        <header>
-          <h1 className="head">Login</h1>
-        </header>
-        <label>
-          Email
+        <label htmlFor="username">Email</label>
+        <div className="login-input">
           <input
-            type="text"
+            // type="text"
             value={email}
             onChange={handleEmailChange}
             required
-          ></input>
-        </label>
+            placeholder="Email"
+            id="username"
+          />
+        </div>
 
-        <label>
-          Password
+        <label htmlFor="password">Password</label>
+        <div className="login-input">
           <input
+            // type="text"
             type="password"
             value={password}
             onChange={handlePasswordChange}
             required
-          ></input>
-        </label>
+            placeholder="Password"
+            id="password"
+          />
+        </div>
 
-        <button className="loginButton container">Login</button>
-      </div>
-    </form>
+        <button className="btn-login loginButton container">Login</button>
+      </form>
+    </div>
   );
 }
 

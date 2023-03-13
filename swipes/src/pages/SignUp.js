@@ -48,127 +48,58 @@ function SignUpPage() {
         window.alert("User could not be created. Please try again.");
       });
   };
-
   return (
-    // <div className="container">
-    //   <header>
-    //     <h1 className="head">Sign Up</h1>
-    //   </header>
-    //   <body className="form">
-    //     <p className="cont firstName">First Name</p>
-    //     <input className="textBox1" />
-    //     <p className="cont lastName">Last Name</p>
-    //     <input className="textBox2" />
-    //     <p className="cont email">Email</p>
-    //     <input className="textBox3" />
-    //     <p className="cont password">Password</p>
-    //     <input className="textBox4" />
-    //     <Link to="/Main">
-    //       <button className="button">Create Account</button>{" "}
-    //     </Link>
-    //   </body>
-    // // </div>
-    // <div className="background">
-    //   <div className="shape"></div>
-    //   <div className="shape1"></div>
-    //   <form className="form-signup">
-    //     <h3>Sign Up</h3>
+    <div className="background">
+      <div className="shape"></div>
+      <div className="shape1"></div>
+      <form onSubmit={handleSubmit} className="form-signup">
+        <h3>Sign Up</h3>
 
-    //     <label htmlFor="firstname">First Name</label>
-    //     <input type="text" placeholder="First Name" id="firstname" />
+        <label htmlFor="firstname">First Name</label>
+        <input
+          type="text"
+          value={firstname}
+          onChange={handleFirstNameChange}
+          required
+          placeholder="First Name"
+          id="firstname"
+        />
 
-    //     <label htmlFor="lastname">Last Name</label>
-    //     <input type="text" placeholder="Last Name" id="lastname" />
+        <label htmlFor="lastname">Last Name</label>
+        <input
+          type="text"
+          value={lastname}
+          onChange={handleLastNameChange}
+          required
+          placeholder="Last Name"
+          id="lastname"
+        />
 
-    //     <label htmlFor="username">Email</label>
-    //     <input type="text" placeholder="Email" id="username" />
+        <label htmlFor="username">Email</label>
+        <input
+          type="text"
+          value={email}
+          onChange={handleEmailChange}
+          required
+          placeholder="Email"
+          id="username"
+        />
 
-    //     <label htmlFor="password">Password</label>
-    //     <input type="password" placeholder="Password" id="password" />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+          required
+          placeholder="Password"
+          id="password"
+        />
 
-    //     <Link to="/Main">
-    //       {" "}
-    //       <button className="btn-sign-up">Create Account</button>
-    //     </Link>
-    //     {/* <div className="social">
-    //       <div className="go">
-    //         <i className="fab fa-google"></i> Google
-    //       </div>
-    //       <div className="fb">
-    //         <i className="fab fa-facebook"></i> Facebook
-    //       </div>
-    //     </div> */}
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
-
-        <label>
-          First Name:
-          <input
-            type="text"
-            value={firstname}
-            onChange={handleFirstNameChange}
-            required
-          />
-        </label>
-
-        <label>
-          Last Name:
-          <input
-            type="text"
-            value={lastname}
-            onChange={handleLastNameChange}
-            required
-          />
-        </label>
-
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
-        </label>
-
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-        </label>
-
-        <button className="button" type="submit">
-          Sign Up
+        <button type="submit" className="btn-sign-up">
+          Create Account
         </button>
       </form>
     </div>
   );
 }
-//   return (
-//     <div className="container">
-//       <header>
-//         <h1 className="head">Sign Up</h1>
-//       </header>
-//       <body className="form">
-//         <p className="cont firstName">First Name</p>
-//         <input className="textBox1" />
-//         <p className="cont lastName">Last Name</p>
-//         <input className="textBox2" />
-//         <p className="cont email">Email</p>
-//         <input className="textBox3" />
-//         <p className="cont password">Password</p>
-//         <input className="textBox4" />
-//         <Link to="/Main">
-//           <button className="button">Create Account</button>{" "}
-//         </Link>
-//       </body>
-//     </div>
-//   );
-// }
-
 export default SignUpPage;

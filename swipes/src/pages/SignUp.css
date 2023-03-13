@@ -85,6 +85,12 @@ input {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.btn-sign-up:hover {
+  background-color: #080710;
+  color: white;
+  transition: 0.75s;
+}
 .social {
   margin-top: 30px;
   display: flex;

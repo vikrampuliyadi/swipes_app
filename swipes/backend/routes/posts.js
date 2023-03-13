@@ -8,6 +8,13 @@ router.route("/").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/accepted/false").get((req, res) => {
+  Post.find({accepted: "false"})
+    .then((posts) => res.json(posts))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+
 router.route("/add").post((req, res) => {
   const email = req.body.email;
   const diningHall = req.body.diningHall;

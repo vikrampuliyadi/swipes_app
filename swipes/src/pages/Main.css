@@ -158,14 +158,6 @@
   margin-top: 5rem;
   margin-bottom: 10rem;
 }
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ddd;
-  min-height: 100vh;
-  padding: 30px;
-}
 
 
 
@@ -178,15 +170,20 @@ body {
 
 .cards {
   display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
   display: block;
   margin: 10px;
-  width: 600px;
+  width: 50%;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .card .image {
@@ -245,4 +242,11 @@ body {
   to {
     background-position-x: -200%;
   }
+}
+
+
+.body {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

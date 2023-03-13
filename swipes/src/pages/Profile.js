@@ -4,6 +4,7 @@ import "./Profile.css";
 import profilePic from "../imgs/default-profile-picture.png";
 import hamIcon from "../imgs/hamburger-icon.png";
 import SocialMediaPost from "../Components/SocialMediaPost.js";
+import HistroyFeed from "../Components/HistoryFeed";
 
 function Profile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,7 +68,7 @@ function Profile() {
     }
 
     const weekdaysElapsed = daysElapsed - weekendsElapsed * 2;
-    const totalSwipesUsed = ((weekdaysElapsed * 2) + weekendsElapsed);
+    const totalSwipesUsed = weekdaysElapsed * 2 + weekendsElapsed;
 
     const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);
 
@@ -241,8 +242,11 @@ function Profile() {
               Current Meal Swipe Balance
             </button>
           </form>
-          <div className="padding"></div>
+          <div>
+            <div className="padding"></div>
+          </div>
         </div>
+        <HistroyFeed></HistroyFeed>
       </header>
     </div>
   );

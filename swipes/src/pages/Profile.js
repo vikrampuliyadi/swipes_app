@@ -13,15 +13,9 @@ function Profile() {
   };
 
   function calculateDaysElapsed(startDate, endDate) {
-    // Calculate the difference in milliseconds between the two dates
     const timeDiff = endDate.getTime() - startDate.getTime();
-
-    // Calculate the number of milliseconds in a day
     const oneDay = 1000 * 60 * 60 * 24;
-
-    // Divide the time difference by the number of milliseconds in a day to get the number of days
-    const daysElapsed = Math.round(timeDiff / oneDay);
-
+    const daysElapsed = Math.floor(timeDiff / oneDay);
     return daysElapsed;
   }
 
@@ -54,6 +48,7 @@ function Profile() {
 
   const elevenPSwipesLeft = () => {
     const date = new Date();
+    console.log(date);
     const month = date.toLocaleString("default", { month: "long" });
     const day = date.getDate();
     const year = date.getFullYear();
@@ -61,26 +56,21 @@ function Profile() {
     const startDate = new Date("2023-01-08"); //UPDATE DATE FOR EACH QUARTER
     const endDate = new Date();
     const daysElapsed = calculateDaysElapsed(startDate, endDate);
+    console.log("days elapsed: " + daysElapsed);
     const initialSwipes = 121;
 
-    //Number of weekends passed
     let weekendsElapsed = Math.floor(daysElapsed / 7);
-    // If the current day is a Saturday or Sunday, add an extra weekend
     if (day % 7 === 6) {
       weekendsElapsed += 1;
       weekendsElapsed /= 2;
       weekendsElapsed = Math.floor(weekendsElapsed);
     }
 
-    //Number of weekdays passed
     const weekdaysElapsed = daysElapsed - weekendsElapsed * 2;
-    //Total number of swipes used
     const totalSwipesUsed = ((weekdaysElapsed * 2) + weekendsElapsed);
 
-    //Number of swipes left
     const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);
 
-    // alert(`Days elapsed: ${daysElapsed}`);
     alert(
       `Today's date is ${month} ${day}, ${year}. At the beginning of today you should have ${swipes} swipes left for the quarter.`
     );
@@ -124,13 +114,10 @@ function Profile() {
     const daysElapsed = calculateDaysElapsed(startDate, endDate);
     const initialSwipes = 152;
 
-    // Calculate the total number of swipes used so far
     const totalSwipesUsed = daysElapsed * 2;
 
-    // Calculate the number of swipes left
     const swipes = initialSwipes - totalSwipesUsed + 2;
 
-    // alert(`Days elapsed: ${daysElapsed}`);
     alert(
       `Today's date is ${month} ${day}, ${year}. At the beginning of today you should have ${swipes} swipes left for the quarter.`
     );
@@ -170,27 +157,19 @@ function Profile() {
     const year = date.getFullYear();
 
     const startDate = new Date("2023-01-08");
-    // const endDate = new Date('2023-03-06');
     const endDate = new Date();
 
     const daysElapsed = calculateDaysElapsed(startDate, endDate);
     const initialSwipes = 209;
 
-    //number of weekends passed
     let weekendsElapsed = Math.floor(daysElapsed / 7) * 2;
-    //If day is a Saturday or Sunday, subtract an extra 2 swipes
     if (day % 7 === 6 || day % 7 === 0) {
       weekendsElapsed += 2;
     }
-    //number of weekdays passed
     const weekdaysElapsed = daysElapsed - weekendsElapsed;
-    //Total number of swipes used so far
     const totalSwipesUsed = weekdaysElapsed * 3 + weekendsElapsed * 2;
+    const swipes = initialSwipes - totalSwipesUsed - 2;
 
-    // Calculate the number of swipes left
-    const swipes = initialSwipes - totalSwipesUsed - 1;
-
-    // alert(`Days elapsed: ${daysElapsed}`);
     alert(
       `Today's date is ${month} ${day}, ${year}. At the beginning of today you should have ${swipes} swipes left for the quarter.`
     );

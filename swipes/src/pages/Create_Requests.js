@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import hamIcon from "../imgs/hamburger-icon.png";
 import "./Create_Requests.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+//import { getUserInfo } from "../../backend/routes/users";
 
 function Create_Requests() {
+  let navigate = useNavigate();
   const [diningHall, setDiningHall] = useState("");
   const [dateTime, setDateTime] = useState("");
   const [price, setPrice] = useState("");
@@ -13,21 +16,73 @@ function Create_Requests() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  //const userInfo = getUserInfo(session.id);
+  // if (userInfo) {
+  //   console.log(`User email: ${userInfo.email}`);
+  // } else {
+  //   console.log("No user information available");
+  // }
+
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const getTokenFromCookies = () => {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith("token=")) {
+        return cookie.substring("token=".length, cookie.length);
+      }
+    }
+    return null;
+  };
+  const token = getTokenFromCookies();
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      withCredentials: true,
+    },
+  };
 
-  const handleSubmit = (event) => {
+  const getUserEmail = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:3000/users/api/user",
+        config
+      );
+      const email = response.data.email;
+      //console.log(email); // log user's email to the console
+      return email;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = {
-      diningHall,
-      dateTime,
-      price,
-      payment,
-      contact,
-      message,
+    const email = await getUserEmail();
+    console.log(email);
+    const post = {
+      email: email,
+      diningHall: diningHall,
+      date: dateTime,
+      price: price,
+      paymentType: payment,
+      contactInfo: contact,
+      message: message,
     };
-    console.log(formData);
+    console.log(post);
+
+    axios
+    .post("http://localhost:3000/posts/add", post)
+    .then((response) => {
+      console.log(response.data);
+      navigate("/Main");
+    })
+    .catch((error) => {
+      console.log(error);
+      window.alert("Post could not be created. Please try again.");
+    });
   };
 
   return (
@@ -72,7 +127,7 @@ function Create_Requests() {
 
           <label htmlFor="contact">Contact Info:</label>
           <input
-            type="email"
+            type="text"
             id="contact"
             name="contact"
             value={contact}
@@ -86,11 +141,9 @@ function Create_Requests() {
             value={message}
             onChange={(event) => setMessage(event.target.value)}
           />
-          <div className="btn">
-            <Link to="/Main">
-              <input type="submit" value="Post" />
-            </Link>
-          </div>
+
+          <button className="btn">Post</button>
+
         </form>
       </div>
 

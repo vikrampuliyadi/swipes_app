@@ -52,7 +52,9 @@ function Main() {
           </div>
         )}
       </div>
-      <div className="empty_space"></div>
+<div classname="page">
+
+
       <SocialMediaPost
         author="Edmond"
         content="Bro someone lemme cop some swipes bro"
@@ -61,6 +63,7 @@ function Main() {
         timestamp="February 18, 2023 12:34 PM"
         paymentType="Zelle"
         date="Monday 5-6PM"
+        contact = "robert@gmail.com"
       />
 
       <SocialMediaPost
@@ -72,8 +75,11 @@ function Main() {
         timestamp="January 18, 2023 12:34 PM"
         paymentType={"Venmo"}
         date="Wednesday 11:30-12:30PM"
+        contact = "911"
       />
     </div>
+    </div>
+
   );
 }
 

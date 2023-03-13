@@ -118,7 +118,7 @@ input[type="button"] {
   text-align: center;
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   margin: 0 auto;
 }
@@ -147,7 +147,7 @@ input[type="button"]:hover {
 }
 
 body {
-  background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab) !important;
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
   height: 100vh;

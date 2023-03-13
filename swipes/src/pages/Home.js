@@ -7,9 +7,9 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>SwipeX</h1>
+        <h1>BSwipe</h1>
         <h2>
-          Welcome to SwipeX, where you can buy and sell meal swipes for the UCLA
+          Welcome to BSwipe, where you can buy and sell meal swipes for the UCLA
           dining halls!
         </h2>
         <div className="App-buttons">

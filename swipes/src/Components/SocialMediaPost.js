@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function SocialMediaPost({
   key,
@@ -12,7 +13,9 @@ function SocialMediaPost({
   contactInfo,
   message,
   accepted,
-}) {
+}) 
+{
+  let navigate = useNavigate();
   const getTokenFromCookies = () => {
     const cookies = document.cookie.split(";");
     for (let i = 0; i < cookies.length; i++) {
@@ -47,8 +50,9 @@ function SocialMediaPost({
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const newEmail = await getUserEmail();
     axios
       .get("http://localhost:3000/posts")
       .then((response) => {
@@ -57,16 +61,15 @@ function SocialMediaPost({
           (post) => post.message === message && post.email === email
         );
         const postId = postToUpdate._id;
-        const newAcceptedValue = { email: getUserEmail() };
+        const newAcceptedValue = newEmail;
 
         console.log(newAcceptedValue);
-        console.log("finding post error");
+        console.log(postId);
         axios
-          .put(`http://localhost:3000/posts/${postId}/update-accepted`, {
-            accepted: newAcceptedValue,
-          })
+          .put(`http://localhost:3000/posts/${postId}/update-accepted`, { email: newAcceptedValue })
           .then((response) => {
             console.log(response.data); // logs "Post accepted field updated successfully"
+            navigate("/Profile");
           })
           .catch((error) => {
             console.error(error);

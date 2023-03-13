@@ -21,11 +21,13 @@ router.put("/:id/update-accepted", async (req, res) => {
 
     const updatedPost = await Post.findByIdAndUpdate(postId, {
       accepted: email,
-    });
+    }, { new: true });    
 
     res.status(200).json({
       message: "Post accepted field updated successfully",
       post: updatedPost,
+      email: email,
+      postId: postId,
     });
   } catch (error) {
     console.error(error);

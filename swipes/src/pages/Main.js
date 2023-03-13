@@ -4,6 +4,7 @@ import DropdownMenu from "../Components/MenuPullDown.js";
 import "./Main.css";
 import hamIcon from "../imgs/hamburger-icon.png";
 import { Link } from "react-router-dom";
+import Feed from "../Components/Feed";
 
 function Main() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +54,9 @@ function Main() {
         )}
       </div>
       <div className="empty_space"></div>
-      <SocialMediaPost
+
+      <Feed />
+      {/* <SocialMediaPost
         author="Edmond"
         content="Bro someone lemme cop some swipes bro"
         price={9}
@@ -72,7 +75,7 @@ function Main() {
         timestamp="January 18, 2023 12:34 PM"
         paymentType={"Venmo"}
         date="Wednesday 11:30-12:30PM"
-      />
+      /> */}
     </div>
   );
 }

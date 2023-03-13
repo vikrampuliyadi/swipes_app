@@ -67,7 +67,7 @@ function Profile() {
     }
 
     const weekdaysElapsed = daysElapsed - weekendsElapsed * 2;
-    const totalSwipesUsed = ((weekdaysElapsed * 2) + weekendsElapsed);
+    const totalSwipesUsed = weekdaysElapsed * 2 + weekendsElapsed;
 
     const swipes = Math.floor(initialSwipes - totalSwipesUsed + 1);
 
@@ -176,7 +176,13 @@ function Profile() {
   };
 
   return (
-    <div className="profile" style={{ backgroundColor: "#109BFF" }}>
+    <div
+      className="profile"
+      // style={{ backgroundColor: "#109BFF" }}
+    >
+      <button className="hamburger-menu-button" onClick={handleMenuClick}>
+        <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
+      </button>
       <header className="profile-header">
         {isMenuOpen && (
           <div>
@@ -219,10 +225,10 @@ function Profile() {
           </p>
           <p className="btncontainer">
             <input type="button" value="11R" onClick={elevenRSwipesLeft} />
-            <input type="button" value="11P" onClick={elevenPSwipesLeft} />
             <input type="button" value="14R" onClick={fourteenRSwipesLeft} />
-            <input type="button" value="14P" onClick={fourteenPSwipesLeft} />
             <input type="button" value="19R" onClick={nineteenRSwipesLeft} />
+            <input type="button" value="11P" onClick={elevenPSwipesLeft} />
+            <input type="button" value="14P" onClick={fourteenPSwipesLeft} />
             <input type="button" value="19P" onClick={nineteenPSwipesLeft} />
           </p>
           <form
@@ -237,32 +243,6 @@ function Profile() {
           </form>
           <div className="padding"></div>
         </div>
-        <div className="padding"></div>
-        <div>
-          <img src={profilePic} className="profile-picture" alt="Profile" />
-        </div>
-        <p className="sc-head" style={{ color: "white" }}>
-          UCLA Recommended Amount
-        </p>
-        <p className="btncontainer">
-          <input type="button" value="11R" onClick={elevenRSwipesLeft} />
-          <input type="button" value="11P" onClick={elevenPSwipesLeft} />
-          <input type="button" value="14R" onClick={fourteenRSwipesLeft} />
-          <input type="button" value="14P" onClick={fourteenPSwipesLeft} />
-          <input type="button" value="19R" onClick={nineteenRSwipesLeft} />
-          <input type="button" value="19P" onClick={nineteenPSwipesLeft} />
-        </p>
-        <form
-          className="btncontainer"
-          action="https://myhousing.hhs.ucla.edu/shib/swipes"
-          method="get"
-          target="_blank"
-        >
-          <button className="btn-to-ucladining" type="submit">
-            Current Meal Swipe Balance
-          </button>
-        </form>
-        <div className="padding"></div>
       </header>
     </div>
   );

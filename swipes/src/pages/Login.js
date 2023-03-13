@@ -29,7 +29,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 // export default Login;
 
-
 function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -43,24 +42,6 @@ function Login() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
-  // const handleSubmit = (event) => {
-
-  //   axios
-  //     .get(`http://localhost:3000/users/${email}/${password}`)
-  //     .then((response) => {
-  //       if (response.data) {
-  //         console.log("User exists in database:", response.data);
-  //       } else {
-  //         console.log("User not found");
-  //         window.alert("User not found");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       window.alert("Failed to fetch user data. Please try again.");
-  //     });
-  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -81,23 +62,6 @@ function Login() {
         console.error(error);
       });
   };
-
-  // const handleSubmit = async () => {
-
-  //   // console.log("hi");
-  //   // try {
-  //   //   const response = await axios.post("/users/auth/signin", {
-  //   //     email,
-  //   //     password,
-  //   //   });
-  //   //   const { message, auth } = response.data;
-  //   //   console.log(message); // "You are successfully login" or "Unable to login"
-
-  //   //   console.log(auth); // true or false
-  //   // } catch (error) {
-  //   //   console.error(error);
-  //   // }
-  // };
 
   return (
     <div className="background">
@@ -122,7 +86,6 @@ function Login() {
         <label htmlFor="password">Password</label>
         <div className="login-input">
           <input
-            // type="text"
             type="password"
             value={password}
             onChange={handlePasswordChange}

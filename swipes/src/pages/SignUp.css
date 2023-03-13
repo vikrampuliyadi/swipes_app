@@ -1,166 +1,82 @@
-/* SignUp.css */
-
-/* * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  color: #ffffff;
-}
-
-.form {
-  width: 80%;
-}
-.head {
-  height: 5rem;
-  margin-top: 2.5rem;
-}
-.container {
-  max-width: 800px;
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.container h1 {
-  font-weight: 800;
-  font-size: 3.75rem;
-  line-height: 4.5rem;
-  text-align: center;
-  text-shadow: 5px 5px 14px rgba(0, 0, 0, 0.25);
-}
-
-.container p {
-  font-weight: 600;
-  font-size: 2.2rem;
-  line-height: 3rem;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.container input {
-  display: block;
-  width: 100%;
-  height: 50px;
-  margin-top: 10px;
-  font-size: 1.5rem;
-  padding: 0 20px;
-  background: #f1eded;
-  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
-  border: none;
-  color: #000000;
-}
-
-.container .button {
-  display: block;
-  color: #f1eded;
-  font-weight: 600;
-  font-size: 2.2rem;
-  line-height: 3rem;
-  width: 100%;
-  max-width: 300px;
-  height: 82px;
-  margin: 30px auto 0;
-  background: #1a2c45;
-  border-radius: 40px;
-  border: none;
-  cursor: pointer;
-} */
-
-/* *,
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-} */
-body{
-  background-color: #ffffff;
-}
-.background{
+.background {
   width: 430px;
   height: 520px;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
 }
-.background .shape{
+.background .shape {
   height: 200px;
   width: 200px;
   position: absolute;
   border-radius: 50%;
 }
-.shape:first-child{
-  background: linear-gradient(
-      #1845ad,
-      #23a2f6
-  );
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
   left: -100px;
   top: -180px;
 }
-.shape:last-child{
-  background: linear-gradient(
-      to right,
-      #ff512f,
-      #f09819
-  );
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
   right: -30px;
   bottom: -80px;
 }
-form{
+.form-signup {
   height: 650px;
-  width: 370px;
-  background-color: rgba(255,255,255,0.13);
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.595);
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   left: 50%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
-  padding: 50px 35px;
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 35px 35px;
 }
-form *{
-  font-family: 'Poppins',sans-serif;
-  color: #000000;
+form * {
+  font-family: "Poppins", sans-serif;
+  color: black;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
 }
-form h3{
+form h3 {
   font-size: 32px;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
 }
 
-label{
+label {
   display: block;
-  margin-top: 24px;
+  /* margin-top: 1rem; */
   font-size: 16px;
   font-weight: 500;
+  height: 2rem;
 }
-input{
-  display: block;
-  height: 50px;
-  width: 100%;
-  background-color: rgba(255,255,255,0.07);
-  border-radius: 3px;
-  padding: 0 10px;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 300;
+input {
+  height: 2.5rem;
+  width: 20rem;
+  justify-self: center;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  border: black;
+  border-width: 5px;
+  background-color: rgba(64, 64, 64, 0.219);
+  color: #000000;
 }
-::placeholder{
+::placeholder {
   color: #ffffff;
 }
-button{
+.btn-sign-up {
   margin-top: 50px;
-  width: 100%;
+  width: 20rem;
   background-color: #ffffff;
   color: #080710;
   padding: 15px 0;
@@ -179,21 +95,21 @@ button{
   margin-top: 30px;
   display: flex;
 }
-.social div{
-background: red;
-width: 150px;
-border-radius: 3px;
-padding: 5px 10px 10px 5px;
-background-color: rgba(255,255,255,0.27);
-color: #eaf0fb;
-text-align: center;
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  text-align: center;
 }
-.social div:hover{
-background-color: rgba(255,255,255,0.47);
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47);
 }
-.social .fb{
-margin-left: 25px;
+.social .fb {
+  margin-left: 25px;
 }
-.social i{
-margin-right: 4px;
+.social i {
+  margin-right: 4px;
 }

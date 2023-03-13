@@ -1,4 +1,4 @@
-.form {
+/* .form {
   width: 80%;
 }
 .head {
@@ -51,4 +51,144 @@
 }
 .social i{
   margin-right: 4px;
+} */
+
+.background {
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  /* background-color: rgba(255, 255, 255, 0.544); */
+}
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child {
+  /* background: linear-gradient(#1845ad, #23a2f6); */
+  background: linear-gradient(white, black);
+  left: -80px;
+  top: -80px;
+}
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: -30px;
+  bottom: -80px;
+}
+.form-login {
+  height: 520px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.595);
+}
+
+form * {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+input {
+  display: block;
+  height: 50px;
+  width: 20rem;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  border: 2px solid black;
+}
+::placeholder {
+  color: #ffffff;
+}
+.btn-login {
+  font-size: largeer;
+  margin-top: 50px;
+  width: 20rem;
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 18px;
+  height: 4rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  border: #080710;
+  border-width: 10px;
+}
+
+.btn-login:hover {
+  background-color: #080710;
+  color: white;
+  transition: 0.75s;
+}
+
+.social {
+  margin-top: 30px;
+  display: flex;
+}
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  /* background-color: rgba(255, 255, 255, 0.27); */
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+.social .fb {
+  margin-left: 25px;
+}
+.social i {
+  margin-right: 4px;
+}
+
+input .text {
+  border: #080710;
+}
+
+input[type="email"],
+input[type="passowrd"],
+textarea {
+  height: 2.5rem;
+  width: 80%;
+  justify-self: center;
+  padding: 10px;
+  margin-bottom: 0px;
+  border: black;
+  border-width: 5px;
+  background-color: rgba(64, 64, 64, 0.219);
+  color: #000000;
 }

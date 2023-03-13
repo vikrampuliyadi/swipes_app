@@ -9,17 +9,15 @@
 }
 
 .hamburger-menu-button {
-  /* position: absolute;
-  top: 2px;
-  right: 2px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   overflow: hidden;
-  text-align: center; */
-  position: absolute;
-  top: 10rem;
+  text-align: center;
 }
 
 .hamburger-icon {
@@ -29,8 +27,8 @@
 
 .hamburger-menu {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 55px;
+  right: 20px;
   border: none;
   padding: 10px;
   text-align: right;
@@ -106,12 +104,6 @@ input[type="button"] {
   cursor: pointer;
   position: relative;
   margin: 1rem;
-  width: 80%;
-}
-
-.profile-rectangle {
-  width: 50%;
-  height: 50%;
 }
 
 .btncontainer {
@@ -125,11 +117,9 @@ input[type="button"] {
 
 input[type="button"]:hover {
   background-color: #ebba34;
-  grid-template-columns: 1 / 3;
 }
 
 .btn-to-ucladining {
-  grid-column: 1/-1;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;

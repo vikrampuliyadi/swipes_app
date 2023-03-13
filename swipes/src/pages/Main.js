@@ -52,27 +52,9 @@ function Main() {
           </div>
         )}
       </div>
-      {/* <div className="empty_space"></div> */}
-      {/* <SocialMediaPost
-        author="Edmond"
-        content="Bro someone lemme cop some swipes bro"
-        price={9}
-        diningHall="BPlate"
-        timestamp="February 18, 2023 12:34 PM"
-        paymentType="Zelle"
-        date="Monday 5-6PM"
-      />
+<div classname="page">
 
-      <SocialMediaPost
-        logo
-        author="Ryan"
-        content="Swipe me in pls"
-        price={8}
-        diningHall="Feast"
-        timestamp="January 18, 2023 12:34 PM"
-        paymentType={"Venmo"}
-        date="Wednesday 11:30-12:30PM"
-      /> */}
+
       <SocialMediaPost
         author="Edmond"
         content="Bro someone lemme cop some swipes bro"
@@ -96,7 +78,8 @@ function Main() {
         contact = "911"
       />
     </div>
-    
+    </div>
+
   );
 }
 

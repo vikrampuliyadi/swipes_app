@@ -1,17 +1,16 @@
-form {
+form1{
   width: 60%;
   margin: 0 auto;
   margin-top: 30px;
-  justify-content: center;
 }
 
-/* body {
+body {
   background-color: #109bff;
-} */
+}
 
 label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -19,6 +18,20 @@ label {
   line-height: 36px;
   text-align: left;
   color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  height: 3rem;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 30px;
+  background: #d9d9d9;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  color: #000000;
 }
 
 input[type="submit"] {
@@ -35,15 +48,16 @@ input[type="submit"] {
   border-radius: 40px;
   cursor: pointer;
   position: relative;
-  margin-top: 2rem;
+  margin: auto;
 }
-input[type="submit"]:hover {
-  background-color: #1a2c45;
-  margin-top: 2rem;
-}
+
 .btn {
   margin: auto;
   text-align: center;
+}
+
+input[type="submit"]:hover {
+  background-color: #ebba34;
 }
 
 .hamburger-menu-button {

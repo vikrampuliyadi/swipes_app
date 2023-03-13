@@ -8,7 +8,6 @@ import Home from "./pages/Home.js";
 import Login from "./pages/Login.js";
 import Main from "./pages/Main.js";
 import SignUpPage from "./pages/SignUp.js";
-import "./index.css";
 
 function App() {
   return (

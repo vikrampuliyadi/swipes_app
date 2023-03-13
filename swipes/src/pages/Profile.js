@@ -116,7 +116,7 @@ function Profile() {
 
     const totalSwipesUsed = daysElapsed * 2;
 
-    const swipes = initialSwipes - totalSwipesUsed + 2;
+    const swipes = initialSwipes - totalSwipesUsed;
 
     alert(
       `Today's date is ${month} ${day}, ${year}. At the beginning of today you should have ${swipes} swipes left for the quarter.`

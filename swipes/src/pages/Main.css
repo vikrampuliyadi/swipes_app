@@ -1,6 +1,6 @@
 /* body{
   background-color: #109bff;
-}
+} */
 .empty_space {
   height: 2rem;
 }
@@ -22,18 +22,33 @@
   overflow: hidden;
 }
 
-.post-element {
-  background-color: #5e5c5c;
+.post-element1 {
   justify-self: stretch;
   margin: auto;
   text-align: left;
   margin-left: 0;
   margin-bottom: 0.5rem;
+  margin-left: 0rem;
+}
+
+.post-element {
+  justify-self: stretch;
+  margin: auto;
+  text-align: left;
+  margin-left: 0;
+  margin-bottom: 0rem;
   margin-left: 1rem;
 }
 
+.post-element2 {
+  justify-self: stretch;
+  margin: auto;
+  text-align: left;
+  margin-top: 1rem ;
+  margin-left: 1rem !important;
+}
+
 .post-author {
-  background-color: #ffd324;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -44,7 +59,6 @@
 }
 
 .post-content {
-  background-color: #a3a1b3;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row: 4 / span 2;
@@ -56,7 +70,6 @@
 }
 
 .post-contact {
-  background-color: #ffd324;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -85,12 +98,11 @@
   grid-template-rows: 1fr 1fr 1fr;
   column-gap: 0.5rem;
   row-gap: 0.5rem;
-  /* margin-bottom: 9.6rem; */
-/* } */
+}
 
 .logo {
   background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fprofile_6522516&psig=AOvVaw3dcKO0j1F-u5MAknJqhmVW&ust=1676848006235000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCLDr4OaXoP0CFQAAAAAdAAAAABAD);
-} */
+} 
 
 .hamburger-menu-button {
   position: absolute;
@@ -143,13 +155,15 @@
   font-size: 1.25rem;
 } */
 
-/* .accept-btn {
+.accept-btn {
   color: black;
-  grid-column-start: 1;
-  grid-row-start: 8;
-  display: block;
-  margin: 1rem;
-} */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
 body {
   display: flex;
   align-items: center;
@@ -181,10 +195,11 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.card .image img {
-  max-width: 200%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+.card .image {
+  display: block;
+  height: 200px;
+  background: #bdbdbd;
+  margin-bottom: 1.5rem;
 }
 
 .card .content {

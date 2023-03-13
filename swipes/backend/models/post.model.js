@@ -11,6 +11,7 @@ const postSchema = new Schema(
     paymentType: { type: String, required: true },
     contactInfo: { type: String, required: true },
     message: { type: String, required: true },
+    accepted: {type: String, required: true},
   },
   {
     timestamps: true,

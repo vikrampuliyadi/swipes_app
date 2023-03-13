@@ -41,23 +41,28 @@ function SocialMediaPost({
       const email = response.data.email;
       return email;
     } catch (error) {
+      console.log("user email error");
       console.error(error);
+      return ""; // return an empty string in case of error
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .get("/posts")
+      .get("http://localhost:3000/posts")
       .then((response) => {
         const posts = response.data;
         const postToUpdate = posts.find(
           (post) => post.message === message && post.email === email
         );
         const postId = postToUpdate._id;
-        const newAcceptedValue = getUserEmail();
+        const newAcceptedValue = { email: getUserEmail() };
+
+        console.log(newAcceptedValue);
+        console.log("finding post error");
         axios
-          .put(`/posts/${postId}/update-accepted`, {
+          .put(`http://localhost:3000/posts/${postId}/update-accepted`, {
             accepted: newAcceptedValue,
           })
           .then((response) => {
@@ -88,7 +93,7 @@ function SocialMediaPost({
       </div>
       <div className="post-element post-content">{message}</div>
       <div className="post-element post-contact">Contact: {contactInfo}</div>
-      <button classname="accept-btn" onSubmit={handleSubmit}>
+      <button classname="accept-btn" onClick={handleSubmit}>
         Accept
       </button>
     </div>

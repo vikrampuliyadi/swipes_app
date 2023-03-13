@@ -9,11 +9,29 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/accepted/false").get((req, res) => {
-  Post.find({accepted: "false"})
+  Post.find({ accepted: "false" })
     .then((posts) => res.json(posts))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.put("/:id/update-accepted", async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const email = req.body.email;
+
+    const updatedPost = await Post.findByIdAndUpdate(postId, {
+      accepted: email,
+    });
+
+    res.status(200).json({
+      message: "Post accepted field updated successfully",
+      post: updatedPost,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
 
 router.route("/add").post((req, res) => {
   const email = req.body.email;

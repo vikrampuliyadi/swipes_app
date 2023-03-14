@@ -113,10 +113,10 @@ input[type="submit"]:hover {
 }
 
 input[type="text"] {
-  width: 80%;
+  width: 80% !important ;
   margin: 0rem;
   padding-bottom: 0;
-  height: 7rem;
+  /* height: 3rem; */
 }
 
 .post-btn {

@@ -113,3 +113,15 @@ input {
 .social i {
   margin-right: 4px;
 }
+
+input[type="text"] {
+  height: 2.5rem;
+  width: 20rem;
+  justify-self: center;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  border: black;
+  border-width: 5px;
+  background-color: rgba(64, 64, 64, 0.219);
+  color: #000000;
+}

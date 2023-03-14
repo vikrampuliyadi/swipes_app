@@ -10,6 +10,7 @@ router.route("/").get((req, res) => {
 
 router.route("/accepted/false").get((req, res) => {
   Post.find({ accepted: "false" })
+    .sort({ createdAt: -1 })
     .then((posts) => res.json(posts))
     .catch((err) => res.status(400).json("Error: " + err));
 });
@@ -17,6 +18,7 @@ router.route("/accepted/false").get((req, res) => {
 router.route("/accepted/email").get((req, res) => {
   const userId = req.query.email;
   Post.find({ $or: [{ accepted: userId }, { email: userId }] })
+    .sort({ createdAt: -1 })
     .then((posts) => res.json(posts))
     .catch((err) => res.status(400).json("Error: " + err));
 });

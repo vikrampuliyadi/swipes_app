@@ -195,19 +195,40 @@ function Profile() {
     },
   };
 
-  const getUserName = async () => {
+  const getUserEmail = async () => {
     try {
       const response = await axios.get(
         "http://localhost:3000/users/api/user",
         config
       );
-      const name = response.data.firstname + response.data.lastname;
-      //console.log(email); // log user's email to the console
+      const email = response.data.email;
+      return email;
+    } catch (error) {
+      console.log("user email error");
+      console.error(error);
+      return ""; // return an empty string in case of error
+    }
+  };
+
+  const getUserName = async () => {
+    const userEmail = await getUserEmail();
+    try {
+      const response = await axios.get(
+        "http://localhost:3000/users/fullname",
+        {
+          params: {
+            email: userEmail
+          }
+        }
+      );
+      const name = response.data;
+      console.log(name); // log user's name to the console
       return name;
     } catch (error) {
       console.error(error);
     }
   };
+  const username = getUserName();
 
   return (
     <div
@@ -255,11 +276,11 @@ function Profile() {
             <img src={profilePic} className="profile-picture" alt="Profile" />
           </div>
           <h1 className="sc-head" style={{ color: "white" }}>
-            getUserName
+            getFullName
           </h1>
-          <p className="sc-head" style={{ color: "white" }}>
+          <h1 className="sc-head" style={{ color: "white" }}>
             UCLA Recommended Amount
-          </p>
+          </h1>
           <p className="btncontainer">
             <input type="button" value="11R" onClick={elevenRSwipesLeft} />
             <input type="button" value="14R" onClick={fourteenRSwipesLeft} />
@@ -282,7 +303,7 @@ function Profile() {
             <div className="padding"></div>
           </div>
         </div>
-        <p>Transcation History</p>
+        <h1>Transaction History</h1>
       </header>
       <HistoryFeed />
     </div>

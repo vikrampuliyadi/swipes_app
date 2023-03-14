@@ -62,9 +62,21 @@ router.get("/email", authenticateToken, (req, res) => {
   res.json({ userEmail });
 });
 
-router.get("/fullname", authenticateToken, (req, res) => {
-  const userName = req.user.firstname + req.user.lastname;
-  res.json({ userName });
+
+router.get("/fullname", authenticateToken, async (req, res) => {
+  try {
+    const email = req.body.email;
+    if (email) {
+      const first = await User.findOne({ email: email }).select("firstname");
+      const last = await User.findOne({ email: email }).select("lastname");
+      const username = first + last;
+      res.json(username);
+    } else {
+      res.status(401).json({ message: "Unauthorized" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: "Error getting user data", error: err });
+  }
 });
 
 router.get("/api/user", authenticateToken, async (req, res) => {

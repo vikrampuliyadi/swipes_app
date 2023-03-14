@@ -283,8 +283,8 @@ function Profile() {
           </div>
         </div>
         <p>Transcation History</p>
-        <HistoryFeed />
       </header>
+      <HistoryFeed />
     </div>
   );
 }

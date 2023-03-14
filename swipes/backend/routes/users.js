@@ -63,13 +63,15 @@ router.get("/email", authenticateToken, (req, res) => {
 });
 
 
-router.get("/fullname", authenticateToken, async (req, res) => {
+router.get("/fullname", async (req, res) => {
   try {
-    const email = req.body.email;
+    const email = req.query.email;
     if (email) {
-      const first = await User.findOne({ email: email }).select("firstname");
-      const last = await User.findOne({ email: email }).select("lastname");
-      const username = first + last;
+      const result = await User.findOne({ email: email }).select("firstname");
+      const firstname = result.firstname;
+      const result2 = await User.findOne({ email: email }).select("lastname");
+      const lastname = result2.lastname;
+      const username = firstname + " " + lastname;
       res.json(username);
     } else {
       res.status(401).json({ message: "Unauthorized" });

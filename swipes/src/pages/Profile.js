@@ -9,6 +9,7 @@ import HistoryFeed from "../Components/HistoryFeed";
 
 function Profile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [fullname, setFullname] = useState("");
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -213,14 +214,9 @@ function Profile() {
   const getUserName = async () => {
     const userEmail = await getUserEmail();
     try {
-      const response = await axios.get(
-        "http://localhost:3000/users/fullname",
-        {
-          params: {
-            email: userEmail
-          }
-        }
-      );
+      const response = await axios.get("http://localhost:3000/users/fullname", {
+        params: { email: userEmail }
+      });
       const name = response.data;
       console.log(name); // log user's name to the console
       return name;
@@ -228,7 +224,17 @@ function Profile() {
       console.error(error);
     }
   };
-  const username = getUserName();
+  const getName = async () => {
+    const name = await getUserName();
+    return name;
+  };
+  useEffect(() => {
+    getName().then(name => {
+      const fullname = name.toString();
+      console.log("name here: " + fullname);
+      setFullname(fullname);
+    });
+  }, []);
 
   return (
     <div
@@ -276,7 +282,7 @@ function Profile() {
             <img src={profilePic} className="profile-picture" alt="Profile" />
           </div>
           <h1 className="sc-head" style={{ color: "white" }}>
-            getFullName
+            {fullname}
           </h1>
           <h1 className="sc-head" style={{ color: "white" }}>
             UCLA Recommended Amount

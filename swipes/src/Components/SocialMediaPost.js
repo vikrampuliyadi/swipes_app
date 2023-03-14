@@ -62,9 +62,6 @@ function SocialMediaPost({
         );
         const postId = postToUpdate._id;
         const newAcceptedValue = newEmail;
-
-        console.log(newAcceptedValue);
-        console.log(postId);
         axios
           .put(`http://localhost:3000/posts/${postId}/update-accepted`, { email: newAcceptedValue })
           .then((response) => {

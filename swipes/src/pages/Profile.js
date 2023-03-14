@@ -246,7 +246,8 @@ function Profile() {
             <div className="padding"></div>
           </div>
         </div>
-        <HistoryFeed></HistoryFeed>
+        <p>Transcation History</p>
+        <HistoryFeed />
       </header>
     </div>
   );

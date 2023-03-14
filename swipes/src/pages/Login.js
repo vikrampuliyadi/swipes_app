@@ -18,24 +18,6 @@ function Login() {
     setPassword(event.target.value);
   };
 
-  // const handleSubmit = (event) => {
-
-  //   axios
-  //     .get(`http://localhost:3000/users/${email}/${password}`)
-  //     .then((response) => {
-  //       if (response.data) {
-  //         console.log("User exists in database:", response.data);
-  //       } else {
-  //         console.log("User not found");
-  //         window.alert("User not found");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       window.alert("Failed to fetch user data. Please try again.");
-  //     });
-  // };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -52,45 +34,7 @@ function Login() {
       });
   };
 
-  // const handleSubmit = async () => {
-
-  //   // console.log("hi");
-  //   // try {
-  //   //   const response = await axios.post("/users/auth/signin", {
-  //   //     email,
-  //   //     password,
-  //   //   });
-  //   //   const { message, auth } = response.data;
-  //   //   console.log(message); // "You are successfully login" or "Unable to login"
-
-  //   //   console.log(auth); // true or false
-  //   // } catch (error) {
-  //   //   console.error(error);
-  //   // }
-  // };
-
   return (
-    // <div className="background">
-    //   <div className="shape"></div>
-    //   <div className="shape1"></div>
-    //   <form className="form-login">
-    //     <h3>Login</h3>
-
-    //     <label htmlFor="username">Email</label>
-    //     <div className="login-input">
-    //       <input type="text" placeholder="Email" id="username" />
-    //     </div>
-
-    //     <label htmlFor="password">Password</label>
-    //     <div className="login-input">
-    //       <input type="text" placeholder="Password" id="password" />
-    //     </div>
-    //     <Link to="/Main">
-    //       {" "}
-    //       <button className="btn-login">Log In</button>
-    //     </Link>
-    //   </form>
-    // </div>
     <form onSubmit={handleSubmit}>
       <div className="container">
         <header>

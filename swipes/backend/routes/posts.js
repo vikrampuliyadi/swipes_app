@@ -15,8 +15,8 @@ router.route("/accepted/false").get((req, res) => {
 });
 
 router.route("/accepted/email").get((req, res) => {
-  const userId = req.body.email; // assuming user ID is available in req.user
-  Post.find({ $or: [{ accepted: userId }, { createdBy: userId }] })
+  const userId = req.query.email;
+  Post.find({ $or: [{ accepted: userId }, { email: userId }] })
     .then((posts) => res.json(posts))
     .catch((err) => res.status(400).json("Error: " + err));
 });

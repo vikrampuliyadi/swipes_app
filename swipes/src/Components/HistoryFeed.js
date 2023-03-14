@@ -39,19 +39,31 @@ function HistoryFeed() {
     }
   };
 
-  const userEmail = getUserEmail();
+  const getEmail = async() => {
+    const userEmail = await getUserEmail();
+    return userEmail;
+  }
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/posts/accepted/email", { email: userEmail })
-      .then((response) => {
-        setPosts(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const getEmailAndFetchPosts = async () => {
+      const userEmail = await getEmail();
+      axios
+        .get("http://localhost:3000/posts/accepted/email", {
+          params: {
+            email: userEmail
+          }
+        })
+        .then((response) => {
+          setPosts(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+    
+    getEmailAndFetchPosts();
   }, []);
-
+  
   return (
     <div>
       {posts.map((post) => (

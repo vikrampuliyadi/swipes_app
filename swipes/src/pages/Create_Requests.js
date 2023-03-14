@@ -16,13 +16,6 @@ function Create_Requests() {
   let acceptedPost = "false";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  //const userInfo = getUserInfo(session.id);
-  // if (userInfo) {
-  //   console.log(`User email: ${userInfo.email}`);
-  // } else {
-  //   console.log("No user information available");
-  // }
-
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -51,7 +44,7 @@ function Create_Requests() {
         config
       );
       const email = response.data.email;
-      //console.log(email); // log user's email to the console
+
       return email;
     } catch (error) {
       console.error(error);
@@ -61,7 +54,6 @@ function Create_Requests() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const email = await getUserEmail();
-    console.log(email);
     const post = {
       email: email,
       diningHall: diningHall,
@@ -72,7 +64,6 @@ function Create_Requests() {
       message: message,
       accepted: acceptedPost,
     };
-    console.log(post);
 
     axios
       .post("http://localhost:3000/posts/add", post)

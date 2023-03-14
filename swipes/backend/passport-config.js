@@ -7,7 +7,6 @@ passport.use(
   new LocalStrategy(
     { usernameField: "email", passwordField: "password" },
     async (email, password, done) => {
-      console.log("lcoal strat used");
       try {
         const user = await User.findOne({ email: email, password: password });
         if (!user) {

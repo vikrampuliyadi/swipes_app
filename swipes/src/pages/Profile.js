@@ -5,6 +5,7 @@ import profilePic from "../imgs/default-profile-picture.png";
 import hamIcon from "../imgs/hamburger-icon.png";
 import SocialMediaPost from "../Components/SocialMediaPost.js";
 import axios from "axios";
+import HistoryFeed from "../Components/HistoryFeed";
 
 function Profile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -277,8 +278,12 @@ function Profile() {
               Current Meal Swipe Balance
             </button>
           </form>
-          <div className="padding"></div>
+          <div>
+            <div className="padding"></div>
+          </div>
         </div>
+        <p>Transcation History</p>
+        <HistoryFeed />
       </header>
     </div>
   );

@@ -5,19 +5,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
 }
 
 .hamburger-menu-button {
-  /* position: absolute;
-  top: 2px;
-  right: 2px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-align: center; */
   position: absolute;
   top: 10rem;
 }
@@ -109,11 +99,6 @@ input[type="button"] {
   width: 80%;
 }
 
-.profile-rectangle {
-  width: 50%;
-  height: 50%;
-}
-
 .btncontainer {
   text-align: center;
   width: 70%;
@@ -177,7 +162,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 90%;
+  height: 75%;
   width: 70%;
   border-radius: 35px;
+  justify-content: center;
+  align-items: center;
 }

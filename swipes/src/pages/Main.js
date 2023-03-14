@@ -57,7 +57,7 @@ function Main() {
 
       <SocialMediaPost
         author="Edmond"
-        content="Bro someone lemme cop some swipes bro"
+        content="Bro someone lemme cop some swipes bro I really need it bro come at me jsjsjsjksskskskskskskskk djdjd just get myself inside I promise I will pay"
         price={9}
         diningHall="BPlate"
         timestamp="February 18, 2023 12:34 PM"

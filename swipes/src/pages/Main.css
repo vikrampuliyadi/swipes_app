@@ -38,14 +38,16 @@
   margin-left: 0;
   margin-bottom: 0rem;
   margin-left: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .post-element2 {
   justify-self: stretch;
   margin: auto;
   text-align: left;
-  margin-top: 1rem ;
+  padding-top: 1rem;
   margin-left: 1rem !important;
+
 }
 
 .post-author {

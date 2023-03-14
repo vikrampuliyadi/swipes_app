@@ -14,14 +14,25 @@ router.route("/accepted/false").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/accepted/email").get((req, res) => {
+  const userId = req.body.email; // assuming user ID is available in req.user
+  Post.find({ $or: [{ accepted: userId }, { createdBy: userId }] })
+    .then((posts) => res.json(posts))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 router.put("/:id/update-accepted", async (req, res) => {
   try {
     const postId = req.params.id;
     const email = req.body.email;
 
-    const updatedPost = await Post.findByIdAndUpdate(postId, {
-      accepted: email,
-    }, { new: true });    
+    const updatedPost = await Post.findByIdAndUpdate(
+      postId,
+      {
+        accepted: email,
+      },
+      { new: true }
+    );
 
     res.status(200).json({
       message: "Post accepted field updated successfully",

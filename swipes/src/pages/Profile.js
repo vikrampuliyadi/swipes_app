@@ -4,7 +4,7 @@ import "./Profile.css";
 import profilePic from "../imgs/default-profile-picture.png";
 import hamIcon from "../imgs/hamburger-icon.png";
 import SocialMediaPost from "../Components/SocialMediaPost.js";
-import HistroyFeed from "../Components/HistoryFeed";
+import HistoryFeed from "../Components/HistoryFeed";
 
 function Profile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -246,7 +246,7 @@ function Profile() {
             <div className="padding"></div>
           </div>
         </div>
-        <HistroyFeed></HistroyFeed>
+        <HistoryFeed></HistoryFeed>
       </header>
     </div>
   );

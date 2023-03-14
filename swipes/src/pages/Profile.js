@@ -257,9 +257,9 @@ function Profile() {
           <h1 className="sc-head" style={{ color: "white" }}>
             getUserName
           </h1>
-          <p className="sc-head" style={{ color: "white" }}>
+          <h1 className="sc-head" style={{ color: "white" }}>
             UCLA Recommended Amount
-          </p>
+          </h1>
           <p className="btncontainer">
             <input type="button" value="11R" onClick={elevenRSwipesLeft} />
             <input type="button" value="14R" onClick={fourteenRSwipesLeft} />
@@ -282,7 +282,7 @@ function Profile() {
             <div className="padding"></div>
           </div>
         </div>
-        <p>Transcation History</p>
+        <h1>Transaction History</h1>
         <HistoryFeed />
       </header>
     </div>

@@ -4,6 +4,7 @@ import "./Profile.css";
 import profilePic from "../imgs/default-profile-picture.png";
 import hamIcon from "../imgs/hamburger-icon.png";
 import SocialMediaPost from "../Components/SocialMediaPost.js";
+import axios from "axios";
 
 function Profile() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -175,6 +176,38 @@ function Profile() {
     );
   };
 
+  const getTokenFromCookies = () => {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith("token=")) {
+        return cookie.substring("token=".length, cookie.length);
+      }
+    }
+    return null;
+  };
+  const token = getTokenFromCookies();
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      withCredentials: true,
+    },
+  };
+
+  const getUserName = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:3000/users/api/user",
+        config
+      );
+      const name = response.data.firstname + response.data.lastname;
+      //console.log(email); // log user's email to the console
+      return name;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div
       className="profile"
@@ -220,6 +253,9 @@ function Profile() {
           <div>
             <img src={profilePic} className="profile-picture" alt="Profile" />
           </div>
+          <h1 className="sc-head" style={{ color: "white" }}>
+            getUserName
+          </h1>
           <p className="sc-head" style={{ color: "white" }}>
             UCLA Recommended Amount
           </p>

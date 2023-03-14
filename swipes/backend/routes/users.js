@@ -62,6 +62,11 @@ router.get("/email", authenticateToken, (req, res) => {
   res.json({ userEmail });
 });
 
+router.get("/fullname", authenticateToken, (req, res) => {
+  const userName = req.user.firstname + req.user.lastname;
+  res.json({ userName });
+});
+
 router.get("/api/user", authenticateToken, async (req, res) => {
   try {
     const email = req.user.email;

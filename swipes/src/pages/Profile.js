@@ -215,7 +215,7 @@ function Profile() {
     const userEmail = await getUserEmail();
     try {
       const response = await axios.get("http://localhost:3000/users/fullname", {
-        params: { email: userEmail }
+        params: { email: userEmail },
       });
       const name = response.data;
       console.log(name); // log user's name to the console
@@ -229,7 +229,7 @@ function Profile() {
     return name;
   };
   useEffect(() => {
-    getName().then(name => {
+    getName().then((name) => {
       const fullname = name.toString();
       console.log("name here: " + fullname);
       setFullname(fullname);
@@ -308,10 +308,10 @@ function Profile() {
           <div>
             <div className="padding"></div>
           </div>
+          <h1 className="transaction-history">Transaction History</h1>
+          <HistoryFeed />
         </div>
-        <h1>Transaction History</h1>
       </header>
-      <HistoryFeed />
     </div>
   );
 }

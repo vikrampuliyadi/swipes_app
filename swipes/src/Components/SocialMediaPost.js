@@ -111,9 +111,12 @@ function SocialMediaPost({
                   Payment Type: {paymentType}
                 </h4>
               </div>
-              <button classname="accept-btn" onClick={handleSubmit}>
+              <div className="accept-cont">
+              <button className="accept-btn" onClick={handleSubmit}>
                 Accept
               </button>
+              </div>
+             
             </div>
           </div>
         </div>

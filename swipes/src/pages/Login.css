@@ -1,58 +1,3 @@
-/* .form {
-  width: 80%;
-}
-.head {
-  height: 6rem;
-  margin-top: 4rem;
-}
-.container {
-  width: 80%;
-  margin: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  border-radius: 30px;
-  cursor: pointer;
-  border: #080710;
-  border-width: 10px;
-}
-
-.btn-login:hover {
-  background-color: #080710;
-  color: white;
-  transition: 0.75s;
-}
-
-.social {
-  margin-top: 30px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
-} */
-
 .background {
   width: 430px;
   height: 520px;
@@ -132,7 +77,6 @@ input {
   color: #ffffff;
 }
 .btn-login {
-  font-size: largeer;
   margin-top: 50px;
   width: 20rem;
   background-color: #ffffff;

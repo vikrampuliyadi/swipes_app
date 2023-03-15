@@ -150,16 +150,6 @@
   padding-bottom: 4px;
 }
 
-.accept-btn {
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 5rem;
-  margin-bottom: 10rem;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* change this as needed */
@@ -184,7 +174,7 @@
   margin-top: 3rem;
 }
 
-.card .t-image {
+.card .image {
   display: block;
   height: 200px;
   background: #bdbdbd;
@@ -241,4 +231,37 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.accept-btn {
+  margin: 1.5rem auto;
+  width: 20rem;
+
+  background-color: #ffffff;
+  color: #080710;
+  font-size: 18px;
+  height: 3rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  border: #080710;
+  border-width: 10px;
+  justify-self: center;
+
+  background: linear-gradient(
+    -45deg,
+    #fcc419,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  background-position: top;
+  text-align: center;
+}
+
+.accept-cont {
+  display: flex;
 }

@@ -167,6 +167,7 @@ body {
   border-radius: 35px;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 .grid {
   display: grid;
@@ -185,14 +186,14 @@ body {
   margin-top: 3rem;
 }
 
-.card .image {
+.t-card .t-image {
   display: block;
   height: 200px;
   background: #bdbdbd;
   margin-bottom: 1.5rem;
 }
 
-.card .content {
+.t-card .content {
   padding: 20px 30px;
 }
 
@@ -242,4 +243,11 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.transaction-history {
+  background-color: rgba(255, 255, 255, 0.272);
+  margin: auto;
+  border-radius: 30px;
+  padding: 10px;
 }

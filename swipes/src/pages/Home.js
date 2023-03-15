@@ -8,9 +8,7 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <h1>BSwipe</h1>
-        <h2>
-          Buying and selling swipes has never been this easy
-        </h2>
+        <h2>Buying and selling swipes has never been this easy</h2>
         <div className="App-buttons">
           <Link to="/SignUp">
             <button className="App-signup-button">Sign Up</button>

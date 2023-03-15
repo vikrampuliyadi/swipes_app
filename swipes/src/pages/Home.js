@@ -9,8 +9,7 @@ function Home() {
       <header className="App-header">
         <h1>BSwipe</h1>
         <h2>
-          Welcome to BSwipe, where you can buy and sell meal swipes for the UCLA
-          dining halls!
+          Buying and selling swipes has never been this easy
         </h2>
         <div className="App-buttons">
           <Link to="/SignUp">

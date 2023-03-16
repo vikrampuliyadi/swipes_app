@@ -137,7 +137,7 @@ input[type="button"]:hover {
 
 html {
   background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 4000%;
+  background-size: 600% 1200%;
   animation: gradient 20s ease infinite;
   /* height: 100vh; */
   height: 100%;
@@ -251,5 +251,6 @@ html {
   background-color: rgba(255, 255, 255, 0.272);
   margin: auto;
   border-radius: 30px;
-  padding: 10px;
+  padding: 1.5rem;
+  margin-top: 4rem;
 }

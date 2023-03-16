@@ -45,7 +45,6 @@ select::after {
   color: #ffffff;
 }
 
-
 input[type="submit"] {
   font-family: "Inter";
   font-style: normal;
@@ -148,7 +147,6 @@ input[type="text"] {
   padding-bottom: 0;
 }
 
-
 .post-btn {
   margin-top: 25px;
   width: 20rem;
@@ -165,4 +163,19 @@ input[type="text"] {
   background-color: #080710;
   color: white;
   transition: 0.75s;
+}
+
+.diningHall-select {
+  margin-bottom: 1rem;
+  background-color: rgba(64, 64, 64, 0.219);
+  margin-top: 0.1rem;
+}
+
+.diningHall-labe {
+  margin-bottom: 0.5rem;
+  line-height: 2rem;
+}
+
+.post-label {
+  font-weight: 600;
 }

@@ -5,7 +5,6 @@
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-  /* background-color: rgba(255, 255, 255, 0.544); */
 }
 .background .shape {
   height: 200px;
@@ -105,7 +104,6 @@ input {
   width: 150px;
   border-radius: 3px;
   padding: 5px 10px 10px 5px;
-  /* background-color: rgba(255, 255, 255, 0.27); */
   color: #eaf0fb;
   text-align: center;
 }

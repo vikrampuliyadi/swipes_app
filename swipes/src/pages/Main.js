@@ -51,6 +51,9 @@ function Main() {
         )}
       </div>
       <div className="empty_space"></div>
+      <center>
+        <h1 className="post-label">Posts</h1>
+      </center>
       <Feed />
     </div>
   );

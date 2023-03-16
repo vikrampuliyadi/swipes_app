@@ -281,7 +281,7 @@ function Profile() {
           <div>
             <img src={profilePic} className="profile-picture" alt="Profile" />
           </div>
-          <h1 className="sc-head" style={{ color: "white" }}>
+          <h1 className="profile-name" style={{ color: "white" }}>
             {fullname}
           </h1>
           <h1 className="sc-head" style={{ color: "white" }}>

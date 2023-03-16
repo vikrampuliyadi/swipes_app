@@ -13,7 +13,7 @@
   border-radius: 50%;
 }
 .shape:first-child {
-  background: linear-gradient(#1845ad, #23a2f6);
+  background: linear-gradient(#1845ad, #23a2f6, #e73c7e);
   left: -100px;
   top: -180px;
 }
@@ -119,7 +119,7 @@ input[type="text"] {
   width: 20rem;
   justify-self: center;
   padding: 10px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   border: black;
   border-width: 5px;
   background-color: rgba(64, 64, 64, 0.219);

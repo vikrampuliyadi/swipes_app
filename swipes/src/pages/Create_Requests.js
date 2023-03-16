@@ -102,10 +102,11 @@ function Create_Requests() {
     <div>
       <div className="form-container">
         <form id="myForm" className="form" onSubmit={handleSubmit}>
-          <label htmlFor="diningHall">Dining Hall:</label>
+          <h1 className="post-label">Create Post</h1>
+          <label htmlFor="diningHall-label">Dining Hall:</label>
           <select
             id="diningHall"
-            name="diningHall"
+            className="diningHall-select"
             value={diningHall}
             onChange={(event) => setDiningHall(event.target.value)}
           >

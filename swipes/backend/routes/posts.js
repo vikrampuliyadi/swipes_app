@@ -18,7 +18,7 @@ router.route("/accepted/false").get((req, res) => {
 router.route("/accepted/email").get((req, res) => {
   const userId = req.query.email;
   Post.find({ $or: [{ accepted: userId }, { email: userId }] })
-    .sort({ createdAt: -1 })
+    .sort({ updatedAt: -1 })
     .then((posts) => res.json(posts))
     .catch((err) => res.status(400).json("Error: " + err));
 });
@@ -50,6 +50,7 @@ router.put("/:id/update-accepted", async (req, res) => {
 
 router.route("/add").post((req, res) => {
   const email = req.body.email;
+  const fullname = req.body.fullname;
   const diningHall = req.body.diningHall;
   const date = req.body.date;
   const price = req.body.price;
@@ -60,6 +61,7 @@ router.route("/add").post((req, res) => {
 
   const newPost = new Post({
     email,
+    fullname,
     diningHall,
     date,
     price,

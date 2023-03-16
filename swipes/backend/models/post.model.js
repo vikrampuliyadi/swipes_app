@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema(
   {
     email: { type: String, required: true },
+    fullname: { type: String, required: true },
     diningHall: { type: String, required: true },
     date: { type: String, required: true },
     price: { type: String, required: true },

@@ -4,6 +4,7 @@ import axios from "axios";
 function TransactionPost({
   key,
   email,
+  fullname,
   diningHall,
   date,
   price,
@@ -19,7 +20,7 @@ function TransactionPost({
         <div className="cards">
           <div className="t-card">
             <div className="content">
-              <h2 className="post-element post-author">{email}</h2>
+              <h2 className="post-element post-author">{fullname}</h2>
               <p className="post-element1 post-contact">
                 Contact: {contactInfo}
               </p>

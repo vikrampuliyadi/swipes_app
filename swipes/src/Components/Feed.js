@@ -22,6 +22,7 @@ function Feed() {
         <SocialMediaPost
           key={post.id}
           email={post.email}
+          fullname={post.fullname}
           diningHall={post.diningHall}
           date={post.date}
           price={post.price}

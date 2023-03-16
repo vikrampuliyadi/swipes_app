@@ -167,17 +167,22 @@
   display: block;
   margin: 10px;
   width: 50%;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   margin-bottom: 3rem;
   margin-top: 3rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
 }
 
 .card .image {
   display: block;
   height: 200px;
   background: #bdbdbd;
+  background: white;
+
   margin-bottom: 1.5rem;
 }
 
@@ -236,9 +241,6 @@
 .accept-btn {
   margin: 1.5rem auto;
   width: 20rem;
-
-  background-color: #ffffff;
-  color: #080710;
   font-size: 18px;
   height: 3rem;
   font-weight: 600;
@@ -248,14 +250,7 @@
   border-width: 10px;
   justify-self: center;
 
-  background: linear-gradient(
-    -45deg,
-    #fcc419,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab
-  );
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   background-position: top;

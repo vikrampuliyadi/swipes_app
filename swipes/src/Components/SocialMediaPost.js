@@ -102,7 +102,7 @@ function SocialMediaPost({
                   Dining Hall: {diningHall}
                 </h4>
                 <h4 className="post-element post-request-date">
-                  Buying swipe for: {date}
+                  Time/Date: {date}
                 </h4>
                 <h4 className="post-element post-swipe-price">
                   Price: ${price}
@@ -112,11 +112,10 @@ function SocialMediaPost({
                 </h4>
               </div>
               <div className="accept-cont">
-              <button className="accept-btn" onClick={handleSubmit}>
-                Accept
-              </button>
+                <button className="accept-btn" onClick={handleSubmit}>
+                  Accept
+                </button>
               </div>
-             
             </div>
           </div>
         </div>

@@ -7,4 +7,5 @@ How to run our web application locally:
 3. npm install to get all of the package.json updates
 4. Open another terminal and cd into the backend folder
 5. Run "nodemon server" on the terminal in the backend folder
+  a. If it does not show "MongoDB database connection established successfully" then connect to a different wifi
 6. Run "npm start" on the terminal in the swipes folder

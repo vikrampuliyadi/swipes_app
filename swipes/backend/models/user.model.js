@@ -2,16 +2,6 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-// const EmailSchemaType = new mongoose.SchemaType({
-//     name: 'email',
-//     validate: {
-//       validator: function(email) {
-//         return /\S+@\S+\.\S+/.test(email);
-//       },
-//       message: props => `${props.value} is not a valid email address!`
-//     }
-//   });
-
 const userSchema = new Schema(
   {
     firstname: {

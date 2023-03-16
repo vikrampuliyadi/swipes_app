@@ -12,8 +12,7 @@ label {
 
 select {
   font-family: "Inter";
-  width: 83%; /* add this to make the select box wider */
-
+  width: 83%;
   font-style: normal;
   font-weight: 450;
   font-size: 15px;
@@ -30,7 +29,6 @@ select {
   margin-top: -5.5rem;
 }
 
-/* style the dropdown arrow icon */
 select::-ms-expand {
   display: none;
 }
@@ -67,7 +65,7 @@ input[type="submit"]:hover {
 }
 
 label[for="diningHall"] {
-  height: 15rem; /* add this to change the height of the label element */
+  height: 15rem;
 }
 
 .btn {

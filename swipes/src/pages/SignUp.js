@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function SignUpPage() {
@@ -9,7 +9,6 @@ function SignUpPage() {
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);

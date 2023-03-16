@@ -7,7 +7,6 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <h1>BSwipe</h1> */}
         <div>
             <img src={logo} className="logo" alt="Profile" />
           </div>

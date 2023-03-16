@@ -46,7 +46,7 @@ function SocialMediaPost({
     } catch (error) {
       console.log("user email error");
       console.error(error);
-      return ""; // return an empty string in case of error
+      return "";
     }
   };
 
@@ -67,7 +67,7 @@ function SocialMediaPost({
             email: newAcceptedValue,
           })
           .then((response) => {
-            console.log(response.data); // logs "Post accepted field updated successfully"
+            console.log(response.data);
             navigate("/Profile");
           })
           .catch((error) => {
@@ -80,7 +80,6 @@ function SocialMediaPost({
       });
   };
   return (
-    //CORRECT CSS AND STYLING
     <div>
       <div className="body">
         <div className="cards">

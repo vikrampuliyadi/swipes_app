@@ -3,7 +3,6 @@
 }
 
 .App-header {
-  /*background-image: url("../imgs/ucla-full-promo.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -25,7 +24,6 @@
   margin-right: 50px;
   margin-left: 50px;
   font-size: 2em;
-  /* color: #fcc419; */
   color: #d8d8d8;
 }
 

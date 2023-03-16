@@ -35,7 +35,7 @@ function HistoryFeed() {
     } catch (error) {
       console.log("user email error");
       console.error(error);
-      return ""; // return an empty string in case of error
+      return "";
     }
   };
 

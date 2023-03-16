@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Profile.css";
 import profilePic from "../imgs/default-profile-picture.png";
 import hamIcon from "../imgs/hamburger-icon.png";
-import SocialMediaPost from "../Components/SocialMediaPost.js";
 import axios from "axios";
 import HistoryFeed from "../Components/HistoryFeed";
 
@@ -51,15 +50,13 @@ function Profile() {
 
   const elevenPSwipesLeft = () => {
     const date = new Date();
-    console.log(date);
     const month = date.toLocaleString("default", { month: "long" });
     const day = date.getDate();
     const year = date.getFullYear();
 
-    const startDate = new Date("2023-01-08"); //UPDATE DATE FOR EACH QUARTER
+    const startDate = new Date("2023-01-08");
     const endDate = new Date();
     const daysElapsed = calculateDaysElapsed(startDate, endDate);
-    console.log("days elapsed: " + daysElapsed);
     const initialSwipes = 121;
 
     let weekendsElapsed = Math.floor(daysElapsed / 7);
@@ -207,7 +204,7 @@ function Profile() {
     } catch (error) {
       console.log("user email error");
       console.error(error);
-      return ""; // return an empty string in case of error
+      return "";
     }
   };
 
@@ -218,7 +215,6 @@ function Profile() {
         params: { email: userEmail },
       });
       const name = response.data;
-      console.log(name); // log user's name to the console
       return name;
     } catch (error) {
       console.error(error);
@@ -231,16 +227,12 @@ function Profile() {
   useEffect(() => {
     getName().then((name) => {
       const fullname = name.toString();
-      console.log("name here: " + fullname);
       setFullname(fullname);
     });
   }, []);
 
   return (
-    <div
-      className="profile"
-      // style={{ backgroundColor: "#109BFF" }}
-    >
+    <div className="profile">
       <button className="hamburger-menu-button" onClick={handleMenuClick}>
         <img src={hamIcon} alt="menu" className="hamburger-icon"></img>
       </button>

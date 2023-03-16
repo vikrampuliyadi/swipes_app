@@ -168,8 +168,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* change this as needed */
-  grid-gap: 10px; /* adjust the gap between the elements */
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
 .cards {

@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import "./Login.css";
 import "./SignUp.css";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -28,10 +27,7 @@ function Login() {
       )
       .then((response) => {
         const { message, auth } = response.data;
-        console.log(response.data); // "You are successfully login" or "Unable to login"
-
         navigate("/Main");
-        console.log(auth); // true or false
       })
       .catch((error) => {
         console.error(error);
@@ -41,22 +37,12 @@ function Login() {
   return (
     <div className="background">
       <div className="shape"></div>
-      {/* <div className="shape1"></div> */}
-
       <form className="form-login" onSubmit={handleSubmit}>
         <h3>Login</h3>
 
         <label htmlFor="username">Email</label>
         <div className="login-input">
-          {/* <form onSubmit={handleSubmit}>
-      <div className="container">
-        <header>
-          <h1 className="head">Login</h1>
-        </header>
-        <label>
-          Email */}
           <input
-            // type="text"
             value={email}
             onChange={handleEmailChange}
             required

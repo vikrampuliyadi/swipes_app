@@ -15,7 +15,6 @@
 
 .shape:first-child {
   background: linear-gradient(#1845ad, #23a2f6);
-  /* background: linear-gradient(white, black); */
   left: -100px;
   top: -140px;
 }

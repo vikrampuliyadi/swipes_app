@@ -40,8 +40,8 @@ function Login() {
 
   return (
     <div className="background">
-      <div className="login-shape"></div>
-      <div className="shape1"></div>
+      <div className="shape"></div>
+      {/* <div className="shape1"></div> */}
 
       <form className="form-login" onSubmit={handleSubmit}>
         <h3>Login</h3>

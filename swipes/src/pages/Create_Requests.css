@@ -178,4 +178,10 @@ input[type="text"] {
 
 .post-label {
   font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.272);
+  margin: auto;
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
 }

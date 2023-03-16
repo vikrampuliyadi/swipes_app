@@ -7,19 +7,9 @@ import Feed from "../Components/Feed";
 
 function Main() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedDiningHall, setSelectedDiningHall] = useState(null);
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleFilterClick = () => {
-    // Refresh the feed with the selected dining hall
-    console.log("Filtering by", selectedDiningHall);
-  };
-
-  const handleDiningHallSelect = (event) => {
-    setSelectedDiningHall(event.target.value);
   };
 
   return (

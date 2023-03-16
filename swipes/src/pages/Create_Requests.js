@@ -102,23 +102,25 @@ function Create_Requests() {
     <div>
       <div className="form-container">
         <form id="myForm" className="form" onSubmit={handleSubmit}>
-          <label htmlFor="diningHall">Dining Hall:</label>
+          <h1 className="post-label">Create Post</h1>
+          <label htmlFor="diningHall-label">Dining Hall:</label>
           <select
             id="diningHall"
-            name="diningHall"
+            className="diningHall-select"
             value={diningHall}
             onChange={(event) => setDiningHall(event.target.value)}
           >
             <option value="">Select a Meal</option>
+            <option value="ASUCLA Ticket">ASUCLA Ticket</option>
             <option value="BCafe">BCafe</option>
             <option value="BPlate">BPlate</option>
             <option value="De Neve">De Neve</option>
             <option value="Epicuria">Epicuria</option>
+            <option value="Feast">Feast</option>
+            <option value="Food Truck">Food Truck Ticket</option>
             <option value="Epicuria at Ackerman">Epicuria at Ackerman</option>
-            <option value="Meal Ticket">Meal Ticket</option>
             <option value="Rende East">Rende East</option>
             <option value="Rende West">Rende West</option>
-            <option value="Rende East">Rende East</option>
             <option value="The Drey">The Drey</option>
             <option value="The Study">The Study</option>
           </select>

@@ -6,7 +6,7 @@
   display: inline-block;
   margin-top: 10px;
   padding: 10px;
-  background-color: #008CBA;
+  background-color: #008cba;
   color: white;
   border: none;
   border-radius: 10px;
@@ -80,9 +80,10 @@
   grid-row: 4 / span 2;
   margin-top: 0.5rem;
   margin-left: 0rem;
-  width: 100%;
+  width: 90%;
   height: 100%;
   align-self: top;
+  overflow-wrap: break-word;
 }
 
 .post-contact {
@@ -283,4 +284,13 @@
   border-radius: 30px;
   padding: 10px;
   width: 46%;
+}
+
+.dininghall-select {
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  color: white;
+}
+.dropdown-dining {
+  color: black !important;
 }

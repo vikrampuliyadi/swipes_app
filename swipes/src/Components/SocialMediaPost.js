@@ -102,9 +102,7 @@ function SocialMediaPost({
                 <h4 className="post-element post-dining-hall">
                   Dining Hall: {diningHall}
                 </h4>
-                <h4 className="post-element post-request-date">
-                  When: {date}
-                </h4>
+                <h4 className="post-element post-request-date">When: {date}</h4>
                 <h4 className="post-element post-swipe-price">
                   Price: ${price}
                 </h4>

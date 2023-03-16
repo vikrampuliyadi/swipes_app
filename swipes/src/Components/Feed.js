@@ -30,27 +30,30 @@ function Feed() {
 
   return (
     <div>
-      <label htmlFor="dining-hall-select">Select a dining hall:</label>
-      <select
-        id="dining-hall-select"
-        value={selectedDiningHall}
-        onChange={handleDiningHallSelect}
-        style={{ width: "200px" }}
-      >
-        <option value="">All</option>
-        <option value="ASUCLA Ticket">ASUCLA Ticket</option>
-        <option value="BCafe">BCafe</option>
-        <option value="BPlate">BPlate</option>
-        <option value="De Neve">De Neve</option>
-        <option value="Epicuria">Epicuria</option>
-        <option value="Feast">Feast</option>
-        <option value="Food Truck Ticket">Food Truck Ticket</option>
-        <option value="Epicuria at Ackerman">Epicuria at Ackerman</option>
-        <option value="Rende East">Rende East</option>
-        <option value="Rende West">Rende West</option>
-        <option value="The Drey">The Drey</option>
-        <option value="The Study">The Study</option>
-      </select>
+      <center>
+        <h3 className="dininghall-select">Select a dining hall:</h3>
+        <select
+          id="dining-hall-select"
+          className="dropdown-dining"
+          value={selectedDiningHall}
+          onChange={handleDiningHallSelect}
+          style={{ width: "200px" }}
+        >
+          <option value="">All</option>
+          <option value="ASUCLA Ticket">ASUCLA Ticket</option>
+          <option value="BCafe">BCafe</option>
+          <option value="BPlate">BPlate</option>
+          <option value="De Neve">De Neve</option>
+          <option value="Epicuria">Epicuria</option>
+          <option value="Feast">Feast</option>
+          <option value="Food Truck Ticket">Food Truck Ticket</option>
+          <option value="Epicuria at Ackerman">Epicuria at Ackerman</option>
+          <option value="Rende East">Rende East</option>
+          <option value="Rende West">Rende West</option>
+          <option value="The Drey">The Drey</option>
+          <option value="The Study">The Study</option>
+        </select>
+      </center>
 
       {posts
         .filter(

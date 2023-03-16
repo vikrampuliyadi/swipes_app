@@ -62,9 +62,8 @@
 
 .App {
   background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23c9d5);
-  background-size: 400% 400%;
+  background-size: 600% 600%;
   animation: gradient 10s ease infinite;
-  height: 100vh;
   background-position: top;
 }
 

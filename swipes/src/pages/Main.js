@@ -55,6 +55,7 @@ function Main() {
       <center>
         <h1 className="post-label">Posts</h1>
       </center>
+
       <Feed />
     </div>
   );

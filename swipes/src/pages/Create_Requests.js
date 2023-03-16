@@ -148,7 +148,8 @@ function Create_Requests() {
           />
 
           <label htmlFor="message">Message:</label>
-          <textarea
+          <input
+            type="text"
             id="message"
             name="message"
             value={message}

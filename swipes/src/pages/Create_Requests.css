@@ -105,14 +105,11 @@ input[type="text"] {
   width: 80% !important ;
   margin: 0rem;
   padding-bottom: 0;
-  /* height: 3rem; */
 }
 
-.post-btn {
-}
 
 .post-btn {
-  margin-top: 50px;
+  margin-top: 25px;
   width: 20rem;
   background-color: #ffffff;
   color: #080710;

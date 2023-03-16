@@ -10,6 +10,42 @@ label {
   color: #ffffff;
 }
 
+select {
+  font-family: "Inter";
+  width: 83%; /* add this to make the select box wider */
+
+  font-style: normal;
+  font-weight: 450;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.595);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  margin-top: -5.5rem;
+}
+
+/* style the dropdown arrow icon */
+select::-ms-expand {
+  display: none;
+}
+select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  pointer-events: none;
+  color: #ffffff;
+}
+
+
 input[type="submit"] {
   font-family: "Inter";
   font-style: normal;
@@ -30,6 +66,11 @@ input[type="submit"]:hover {
   background-color: #1a2c45;
   margin-top: 2rem;
 }
+
+label[for="diningHall"] {
+  height: 15rem; /* add this to change the height of the label element */
+}
+
 .btn {
   margin: auto;
   text-align: center;

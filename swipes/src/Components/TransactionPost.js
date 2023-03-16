@@ -37,7 +37,7 @@ function TransactionPost({
                   Dining Hall: {diningHall}
                 </h4>
                 <h4 className="post-element post-request-date">
-                  Buying swipe for: {date}
+                  When: {date}
                 </h4>
                 <h4 className="post-element post-swipe-price">
                   Price: ${price}

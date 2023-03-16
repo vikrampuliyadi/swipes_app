@@ -6,13 +6,16 @@
 }
 
 .filter-button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
   background-color: #008CBA;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 .filter-button:hover {

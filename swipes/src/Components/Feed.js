@@ -4,6 +4,7 @@ import SocialMediaPost from "./SocialMediaPost";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
+  const [selectedDiningHall, setSelectedDiningHall] = useState(null);
 
   useEffect(() => {
     axios

@@ -4,6 +4,21 @@
 .empty_space {
   height: 2rem;
 }
+
+.filter-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background-color: #006f8b;
+}
+
 .post-container {
   color: white;
   font-weight: bold;

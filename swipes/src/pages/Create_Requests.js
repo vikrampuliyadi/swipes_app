@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import hamIcon from "../imgs/hamburger-icon.png";
 import "./Create_Requests.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -51,11 +51,32 @@ function Create_Requests() {
     }
   };
 
+  const getUserName = async () => {
+    const userEmail = await getUserEmail();
+    try {
+      const response = await axios.get("http://localhost:3000/users/fullname", {
+        params: { email: userEmail },
+      });
+      const name = response.data;
+      console.log(name); // log user's name to the console
+      return name;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const getName = async () => {
+    const name = await getUserName();
+    return name;
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const email = await getUserEmail();
+    const fullname = await getName();
+    console.log(fullname);
     const post = {
       email: email,
+      fullname: fullname,
       diningHall: diningHall,
       date: dateTime,
       price: price,

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 function SocialMediaPost({
   key,
   email,
+  fullname,
   diningHall,
   date,
   price,
@@ -85,7 +86,7 @@ function SocialMediaPost({
         <div className="cards">
           <div className="card">
             <div className="content">
-              <h2 className="post-element post-author">{email}</h2>
+              <h2 className="post-element post-author">{fullname}</h2>
               <p className="post-element1 post-contact">
                 Contact: {contactInfo}
               </p>

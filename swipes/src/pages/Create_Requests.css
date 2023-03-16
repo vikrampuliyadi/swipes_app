@@ -171,11 +171,15 @@ input[type="text"] {
   margin-top: 0.1rem;
 }
 
-.diningHall-labe {
+.diningHall-label {
   margin-bottom: 0.5rem;
   line-height: 2rem;
 }
 
-.post-label {
+.create-post-label {
   font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.272);
+  margin: auto;
+  border-radius: 30px;
+  padding: 0.75rem 2rem;
 }

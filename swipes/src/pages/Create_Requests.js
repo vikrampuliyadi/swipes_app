@@ -102,7 +102,9 @@ function Create_Requests() {
     <div>
       <div className="form-container">
         <form id="myForm" className="form" onSubmit={handleSubmit}>
-          <h1 className="post-label">Create Post</h1>
+          <center>
+            <h1 className="create-post-label">Create Post</h1>
+          </center>
           <label htmlFor="diningHall-label">Dining Hall:</label>
           <select
             id="diningHall"

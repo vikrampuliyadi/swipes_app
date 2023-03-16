@@ -68,6 +68,20 @@
   background-position: top;
 }
 
+.logo {
+  width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.h2 {
+  margin-top: 0px;
+}
+
+.padding {
+  padding-bottom: 10px;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
